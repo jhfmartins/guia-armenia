@@ -1,0 +1,1378 @@
+<title>Arménia — Road Trip Solo · Dossier de Rota</title>
+<style>
+  :root{
+    --bg:#EAE8E1; --bg-2:#E1DFD6; --surface:#F4F2EC; --surface-2:#EEEBE3;
+    --ink:#23262A; --ink-soft:#585D62; --ink-faint:#8A8F93;
+    --line:#D2CFC5; --line-soft:#DEDBD1;
+    --accent:#A9541E; --accent-ink:#8A4416; --accent-2:#2C5F6E; --gold:#8C6B1F;
+    --shadow:0 1px 2px rgba(30,28,22,.06),0 8px 24px rgba(30,28,22,.06);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"New York",ui-serif,Georgia,"Times New Roman",serif;
+    --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono","Menlo",Consolas,monospace;
+    --maxw:1180px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#14171B; --bg-2:#171B20; --surface:#1C2126; --surface-2:#20262C;
+      --ink:#E7E4DB; --ink-soft:#A4AAB0; --ink-faint:#78808A;
+      --line:#2C333A; --line-soft:#242A30;
+      --accent:#DC8A4A; --accent-ink:#E7A063; --accent-2:#5AA0B2; --gold:#C7A24A;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#EAE8E1; --bg-2:#E1DFD6; --surface:#F4F2EC; --surface-2:#EEEBE3;
+    --ink:#23262A; --ink-soft:#585D62; --ink-faint:#8A8F93;
+    --line:#D2CFC5; --line-soft:#DEDBD1;
+    --accent:#A9541E; --accent-ink:#8A4416; --accent-2:#2C5F6E; --gold:#8C6B1F;
+    --shadow:0 1px 2px rgba(30,28,22,.06),0 8px 24px rgba(30,28,22,.06);
+  }
+  :root[data-theme="dark"]{
+    --bg:#14171B; --bg-2:#171B20; --surface:#1C2126; --surface-2:#20262C;
+    --ink:#E7E4DB; --ink-soft:#A4AAB0; --ink-faint:#78808A;
+    --line:#2C333A; --line-soft:#242A30;
+    --accent:#DC8A4A; --accent-ink:#E7A063; --accent-2:#5AA0B2; --gold:#C7A24A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.15;margin:0}
+  p{margin:0 0 .85em}
+  a{color:var(--accent-ink);text-decoration:none}
+  a:hover{text-decoration:underline}
+  ::selection{background:color-mix(in srgb,var(--accent) 30%,transparent)}
+
+  /* ---------- layout shell ---------- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+  .shell{display:grid;grid-template-columns:1fr;gap:0}
+  @media(min-width:1000px){
+    .shell{grid-template-columns:248px minmax(0,1fr);align-items:start;
+      max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,3vw,40px);gap:44px}
+  }
+
+  /* ---------- TOC ---------- */
+  nav.toc{display:none}
+  @media(min-width:1000px){
+    nav.toc{display:block;position:sticky;top:0;max-height:100vh;overflow-y:auto;
+      padding:28px 4px 40px;font-size:13px;scrollbar-width:thin}
+    nav.toc::-webkit-scrollbar{width:6px}
+    nav.toc::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+  }
+  .toc .brand{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:2px}
+  .toc .brand small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-faint);margin-top:6px}
+  .toc ol{list-style:none;margin:16px 0 0;padding:0;counter-reset:s}
+  .toc li{margin:0}
+  .toc a{display:flex;gap:9px;padding:4px 8px;border-radius:6px;color:var(--ink-soft);
+    line-height:1.35;align-items:baseline}
+  .toc a:hover{background:var(--surface);color:var(--ink);text-decoration:none}
+  .toc a .n{font-family:var(--mono);font-size:10.5px;color:var(--accent-ink);flex:0 0 20px;text-align:right}
+  .toc .grp{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-faint);margin:18px 0 5px;padding:0 8px}
+
+  /* ---------- hero ---------- */
+  header.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    background:var(--bg-2)}
+  header.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+  @media (prefers-color-scheme:dark){header.hero canvas{opacity:.42}}
+  :root[data-theme="dark"] header.hero canvas{opacity:.42}
+  :root[data-theme="light"] header.hero canvas{opacity:.5}
+  .hero-inner{position:relative;max-width:var(--maxw);margin:0 auto;
+    padding:clamp(52px,9vw,104px) clamp(16px,4vw,40px) clamp(40px,6vw,72px)}
+  .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:20px}
+  header.hero h1{font-size:clamp(38px,7vw,74px);letter-spacing:-.015em;max-width:14ch}
+  header.hero h1 em{font-style:italic;color:var(--accent-ink)}
+  .lede{font-size:clamp(16px,2.1vw,20px);color:var(--ink-soft);max-width:56ch;margin-top:22px}
+  .heroline{font-family:var(--mono);font-size:12px;color:var(--ink-faint);margin-top:26px;
+    display:flex;flex-wrap:wrap;gap:8px 22px}
+  .heroline b{color:var(--ink);font-weight:600}
+
+  .statbar{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:34px}
+  @media(min-width:640px){.statbar{grid-template-columns:repeat(4,1fr)}}
+  .statbar>div{background:var(--bg-2);padding:16px 18px}
+  .statbar .v{font-family:var(--serif);font-size:clamp(22px,3.4vw,30px);font-weight:600;
+    font-variant-numeric:tabular-nums;color:var(--accent-ink)}
+  .statbar .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-faint);margin-top:3px}
+
+  /* ---------- content ---------- */
+  main{padding:8px 0 90px}
+  section{padding:44px 0 8px;scroll-margin-top:14px;border-top:1px solid var(--line-soft)}
+  section:first-of-type{border-top:0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+  .sec-head .num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent-ink);
+    letter-spacing:.06em;flex:0 0 auto;padding-top:6px}
+  .sec-head h2{font-size:clamp(24px,3.6vw,33px);letter-spacing:-.01em}
+  .sec-head .sub{font-size:14px;color:var(--ink-soft);margin-top:4px;max-width:64ch}
+  .prose{max-width:68ch}
+  .prose p{color:var(--ink-soft)}
+  .prose strong{color:var(--ink);font-weight:650}
+
+  /* cards + grids */
+  .grid{display:grid;gap:14px;margin:6px 0 4px}
+  .g2{grid-template-columns:1fr}
+  .g3{grid-template-columns:1fr}
+  @media(min-width:680px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){.g3{grid-template-columns:1fr 1fr 1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:17px 18px;box-shadow:var(--shadow)}
+  .card h3,.card h4{font-size:17px;margin-bottom:5px}
+  .card h4{font-size:15.5px}
+  .card p{font-size:14px;color:var(--ink-soft);margin:0 0 .5em}
+  .card p:last-child{margin-bottom:0}
+  .card .meta{font-family:var(--mono);font-size:11px;color:var(--ink-faint);
+    letter-spacing:.03em;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px 12px}
+  .card .meta b{color:var(--accent-ink);font-weight:600}
+
+  .tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;padding:2px 8px;border-radius:20px;border:1px solid var(--line);
+    color:var(--ink-soft);background:var(--surface-2)}
+  .tag.a{color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+  .tag.t{color:var(--accent-2);border-color:color-mix(in srgb,var(--accent-2) 40%,var(--line))}
+  .tag.g{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 45%,var(--line))}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+
+  /* stars */
+  .stars{font-family:var(--mono);letter-spacing:1px;color:var(--accent);font-size:12px}
+  .stars .off{color:var(--line)}
+
+  /* tables */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin:6px 0}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px;background:var(--surface)}
+  th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-faint);background:var(--surface-2);position:sticky;top:0}
+  tbody tr:last-child td{border-bottom:0}
+  td.num,th.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+  td.tot{font-weight:700;color:var(--ink)}
+  tfoot td{font-family:var(--mono);font-weight:700;background:var(--surface-2);border-top:2px solid var(--line)}
+
+  /* itinerary timeline */
+  .route{display:flex;flex-direction:column;gap:0;margin-top:8px}
+  .day{position:relative;padding:0 0 8px 30px;border-left:2px solid var(--line);margin-left:8px}
+  .day:last-child{border-left-color:transparent}
+  .day::before{content:"";position:absolute;left:-8px;top:4px;width:14px;height:14px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+  .day-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;box-shadow:var(--shadow);margin-bottom:22px}
+  .day-num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+  .day-card h3{font-size:19px;margin:3px 0 8px}
+  .leg{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+    display:flex;flex-wrap:wrap;gap:4px 16px;margin:2px 0 12px;
+    padding:8px 10px;background:var(--surface-2);border-radius:8px}
+  .leg b{color:var(--accent-2);font-weight:600}
+  .day-card p{font-size:14px;color:var(--ink-soft)}
+  .sleep{margin-top:11px;padding-top:11px;border-top:1px dashed var(--line);font-size:13.5px}
+  .sleep .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);display:block;margin-bottom:2px}
+  .sleep b{color:var(--ink)}
+
+  /* callouts */
+  .note{border-left:3px solid var(--accent);background:var(--surface-2);
+    padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0;font-size:14px;color:var(--ink-soft)}
+  .note.warn{border-left-color:#B54A3A}
+  .note.warn b{color:#B54A3A}
+  @media (prefers-color-scheme:dark){.note.warn{border-left-color:#E27A66}.note.warn b{color:#E27A66}}
+  :root[data-theme="dark"] .note.warn{border-left-color:#E27A66}
+  :root[data-theme="dark"] .note.warn b{color:#E27A66}
+  .note b{color:var(--ink)}
+  .note .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent-ink);display:block;margin-bottom:4px}
+
+  ul.clean{list-style:none;margin:8px 0;padding:0}
+  ul.clean li{position:relative;padding:5px 0 5px 22px;font-size:14px;color:var(--ink-soft);
+    border-bottom:1px solid var(--line-soft)}
+  ul.clean li:last-child{border-bottom:0}
+  ul.clean li::before{content:"›";position:absolute;left:4px;color:var(--accent);font-weight:700}
+  ul.clean li b{color:var(--ink)}
+
+  /* checklist */
+  .check{columns:2;column-gap:34px}
+  @media(max-width:640px){.check{columns:1}}
+  .check .h{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent-ink);margin:14px 0 6px;break-after:avoid}
+  .check label{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--ink-soft);
+    padding:3px 0;break-inside:avoid}
+  .check input{margin-top:3px;accent-color:var(--accent)}
+
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 6px}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0;
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);text-align:center}
+  footer a{color:var(--ink-soft)}
+
+  .updated{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin-top:6px}
+
+  a.top{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--ink-faint);
+    margin-top:4px;letter-spacing:.06em}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+  /* ---------- section marker icons ---------- */
+  .sec-head{align-items:flex-start}
+  .sec-mark{display:flex;flex-direction:column;align-items:center;gap:5px;flex:0 0 auto;padding-top:2px}
+  .sec-mark .num{padding-top:0}
+  .sec-ic{width:24px;height:24px;color:var(--accent);fill:none;stroke:currentColor;
+    stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+  @media(max-width:520px){.sec-ic{width:20px;height:20px}}
+
+  /* ---------- hero ridge silhouette ---------- */
+  header.hero .hero-inner{position:relative;z-index:2}
+  .hero-ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:clamp(90px,16vw,160px);
+    z-index:0;pointer-events:none}
+  .hero-ridge .r-far{fill:var(--accent);opacity:.09}
+  .hero-ridge .r-near{fill:var(--ink);opacity:.07}
+  .hero-ridge .r-line{fill:none;stroke:var(--ink);stroke-width:1.4;opacity:.22}
+  .hero-ridge .r-acc{fill:none;stroke:var(--accent);stroke-width:1.4;opacity:.5}
+
+  /* ---------- route map ---------- */
+  .mapfig{margin:4px 0 20px;background:var(--surface);border:1px solid var(--line);
+    border-radius:14px;padding:16px clamp(8px,3vw,22px) 12px;box-shadow:var(--shadow)}
+  .rmap{max-width:430px;width:100%;height:auto;display:block;margin:0 auto}
+  .rmap .land{fill:var(--surface-2);stroke:var(--line);stroke-width:1.4}
+  .rmap .route{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+  .rmap .route.ext{stroke-dasharray:5 6;opacity:.7}
+  .rmap .node{fill:var(--surface);stroke:var(--accent);stroke-width:2}
+  .rmap .node.ext{stroke-dasharray:3 3}
+  .rmap .hub{fill:var(--accent);stroke:var(--surface);stroke-width:2.5}
+  .rmap .kv{fill:var(--surface);stroke:var(--accent-2);stroke-width:2}
+  .rmap .nnum{fill:var(--accent-ink);font-family:var(--mono);font-size:11px;font-weight:700;
+    text-anchor:middle;dominant-baseline:central}
+  .rmap .nlab{fill:var(--ink);font-family:var(--sans);font-size:10.5px;font-weight:600;dominant-baseline:central}
+  .rmap .nlab.end{text-anchor:end}
+  .rmap .region{fill:var(--ink-faint);font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;opacity:.55}
+  .rmap .hublab{fill:var(--accent-ink);font-family:var(--mono);font-size:9.5px;font-weight:700;
+    letter-spacing:.1em;text-anchor:middle}
+  .maplegend{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:center;margin-top:12px;
+    font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
+  .maplegend span{display:inline-flex;align-items:center;gap:7px}
+  .maplegend i{width:20px;border-top:2.6px solid var(--accent);display:inline-block}
+  .maplegend i.ext{border-top-style:dashed;opacity:.7}
+  .maplegend .cap{color:var(--ink-faint)}
+
+  /* ---------- google maps links ---------- */
+  .gmap{display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);font-size:10.5px;
+    color:var(--accent-2);border:1px solid color-mix(in srgb,var(--accent-2) 34%,var(--line));
+    padding:1px 8px;border-radius:20px;white-space:nowrap;text-decoration:none;background:var(--surface)}
+  .gmap:hover{background:var(--surface-2);text-decoration:none;
+    border-color:color-mix(in srgb,var(--accent-2) 60%,var(--line))}
+  .gmap::after{content:"↗";font-size:9px;opacity:.65}
+  td .gmap{margin-top:5px}
+  ul.clean li .gmap{margin-left:2px}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="ic-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2.2 5-5 2.2 2.2-5z"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24"><circle cx="6" cy="6.5" r="2.2"/><circle cx="18" cy="17.5" r="2.2"/><path d="M6 9v3.5a4 4 0 0 0 4 4h5" stroke-dasharray="2.2 2.4"/></symbol>
+  <symbol id="ic-road" viewBox="0 0 24 24"><path d="M8.5 21L10.5 3M15.5 21L13.5 3"/><path d="M12 6v2.4M12 11v2.4M12 16v2.4"/></symbol>
+  <symbol id="ic-tent" viewBox="0 0 24 24"><path d="M3 20L12 5l9 15z"/><path d="M12 5v15"/><path d="M8.2 20l3.8-6.6 3.8 6.6"/></symbol>
+  <symbol id="ic-mountain" viewBox="0 0 24 24"><path d="M2 20l6.5-12 4.2 7"/><path d="M11.5 20l4.3-8L22 20z"/><path d="M14.5 13.5l1.3-1.5 1.3 1.5"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2.5v2.3M12 19.2v2.3M2.5 12h2.3M19.2 12h2.3M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24"><path d="M12 3l2.5 5.6 6 .6-4.5 4 1.4 5.9L12 21l-5.4 3.1 1.4-5.9-4.5-4 6-.6z"/></symbol>
+  <symbol id="ic-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.4"/><circle cx="12" cy="13.3" r="3.6"/><path d="M8.2 7l1.6-2.6h4.4L15.8 7"/></symbol>
+  <symbol id="ic-ruin" viewBox="0 0 24 24"><path d="M4 21V6l4-1.6v16.6"/><path d="M12 21V4.4L16 6v15"/><path d="M4 9.5h4M12 11.5h4M20 12v9"/></symbol>
+  <symbol id="ic-lake" viewBox="0 0 24 24"><path d="M3 9c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M3 14c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M3 19c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/></symbol>
+  <symbol id="ic-fall" viewBox="0 0 24 24"><path d="M8 3v9M12 3v9M16 3v9"/><path d="M4 17c2 2 4.5 2 6.5 0s4.5-2 6.5 0"/><path d="M4 21c2 2 4.5 2 6.5 0s4.5-2 6.5 0"/></symbol>
+  <symbol id="ic-coin" viewBox="0 0 24 24"><circle cx="9" cy="12" r="6.2"/><path d="M14.5 6.3a6.2 6.2 0 0 1 0 11.4"/></symbol>
+  <symbol id="ic-food" viewBox="0 0 24 24"><path d="M7 3v7.5a2 2 0 0 0 2 2V21M7 3v4.5M9 3v4.5"/><path d="M16.8 3c-1.8 0-2.8 2-2.8 4.8s1 4.2 2.8 4.2V21"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 5-3 7.5-7 9.5-4-2-7-4.5-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></symbol>
+</defs></svg>
+
+<header class="hero">
+  <canvas id="topo" aria-hidden="true"></canvas>
+  <svg class="hero-ridge" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path class="r-far" d="M0 160 L0 96 L120 60 L240 92 L360 44 L470 84 L560 40 L680 78 L800 34 L920 74 L1040 48 L1140 82 L1200 58 L1200 160 Z"/>
+    <path class="r-acc" d="M0 96 L120 60 L240 92 L360 44 L470 84 L560 40 L680 78 L800 34 L920 74 L1040 48 L1140 82 L1200 58"/>
+    <path class="r-near" d="M0 160 L0 128 L150 104 L300 132 L430 100 L560 130 L700 108 L840 134 L980 106 L1120 132 L1200 116 L1200 160 Z"/>
+    <path class="r-line" d="M0 128 L150 104 L300 132 L430 100 L560 130 L700 108 L840 134 L980 106 L1120 132 L1200 116"/>
+    <g class="r-line">
+      <path d="M556 40 l-14 20 h28 z"/>
+      <path d="M560 40 v-10 M556 34 h8"/>
+      <path d="M798 34 a14 14 0 0 1 28 0"/>
+      <path d="M798 48 h28 v-14"/>
+      <path d="M355 118 v-16 M362 118 v-16 M369 118 v-16 M348 102 h28"/>
+    </g>
+  </svg>
+  <div class="hero-inner">
+    <div class="kicker">Dossier de Rota · Viajante Solo</div>
+    <h1>Arménia, <em>de carro</em> e sem pressa</h1>
+    <p class="lede">Um circuito de 11 dias (extensível a 12) por montanhas vulcânicas, desfiladeiros de basalto, mosteiros esquecidos, lagos de altitude e ruínas soviéticas — do apricot de Yerevan ao sul remoto de Syunik. Baixo custo, natureza a sério, céus escuros.</p>
+    <div class="heroline">
+      <span><b>Base</b> Yerevan (Zvartnots · EVN)</span>
+      <span><b>Época</b> meados de setembro</span>
+      <span><b>Carro</b> alugado, manual, económico</span>
+      <span><b>Dormir</b> guesthouse · hostel · campismo selvagem</span>
+    </div>
+    <div class="statbar">
+      <div><div class="v">11–12</div><div class="k">Dias</div></div>
+      <div><div class="v">~1 550</div><div class="k">km ao volante</div></div>
+      <div><div class="v">~€1 050</div><div class="k">Orçamento solo</div></div>
+      <div><div class="v">4</div><div class="k">Noites sob as estrelas</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="toc" aria-label="Índice">
+    <div class="brand">Arménia<small>Guia de campo</small></div>
+    <div class="grp">Visão geral</div>
+    <ol>
+      <li><a href="#s1"><span class="n">01</span>Resumo da viagem</a></li>
+      <li><a href="#s31"><span class="n">31</span>Mapa lógico — porquê esta rota</a></li>
+      <li><a href="#s2"><span class="n">02</span>Itinerário dia a dia</a></li>
+      <li><a href="#s3"><span class="n">03</span>Onde dormir cada noite</a></li>
+      <li><a href="#s4"><span class="n">04</span>Km e tempo de condução</a></li>
+      <li><a href="#smap"><span class="n">↗</span>Pontos no Google Maps</a></li>
+    </ol>
+    <div class="grp">Natureza & trilhos</div>
+    <ol>
+      <li><a href="#s5"><span class="n">05</span>Trail guide — caminhadas</a></li>
+      <li><a href="#s14"><span class="n">14</span>Melhores lagos</a></li>
+      <li><a href="#s15"><span class="n">15</span>Melhores cascatas</a></li>
+      <li><a href="#s16"><span class="n">16</span>Desfiladeiros / canyons</a></li>
+      <li><a href="#s10"><span class="n">10</span>Estradas panorâmicas</a></li>
+      <li><a href="#s8"><span class="n">08</span>Top 20 imperdíveis</a></li>
+      <li><a href="#s7"><span class="n">07</span>Observação de fauna</a></li>
+    </ol>
+    <div class="grp">Fotografia & contemplação</div>
+    <ol>
+      <li><a href="#s6"><span class="n">06</span>Nascer / pôr do sol</a></li>
+      <li><a href="#s11"><span class="n">11</span>Locais de fotografia</a></li>
+      <li><a href="#s18"><span class="n">18</span>Dark sky · estrelas</a></li>
+      <li><a href="#s17"><span class="n">17</span>Contemplar durante horas</a></li>
+      <li><a href="#s13"><span class="n">13</span>Urbex soviético</a></li>
+      <li><a href="#s12"><span class="n">12</span>Locais de locais</a></li>
+      <li><a href="#s9"><span class="n">09</span>Sobrevalorizados a ignorar</a></li>
+    </ol>
+    <div class="grp">Logística</div>
+    <ol>
+      <li><a href="#s19"><span class="n">19</span>Custos estimados</a></li>
+      <li><a href="#s20"><span class="n">20</span>Equipamento</a></li>
+      <li><a href="#s21"><span class="n">21</span>Meteorologia & roupa</a></li>
+      <li><a href="#s22"><span class="n">22</span>Segurança</a></li>
+      <li><a href="#s23"><span class="n">23</span>Apps úteis</a></li>
+      <li><a href="#s25"><span class="n">25</span>Estratégia de combustível</a></li>
+    </ol>
+    <div class="grp">Comer & ritmo</div>
+    <ol>
+      <li><a href="#s24"><span class="n">24</span>Comida barata</a></li>
+      <li><a href="#s27"><span class="n">27</span>Restaurantes baratos</a></li>
+      <li><a href="#s28"><span class="n">28</span>Cafés com vista</a></li>
+      <li><a href="#s26"><span class="n">26</span>Paragens rápidas 5–15 min</a></li>
+      <li><a href="#s29"><span class="n">29</span>Cronograma diário</a></li>
+      <li><a href="#s30"><span class="n">30</span>Plano para dias de chuva</a></li>
+    </ol>
+    <div class="grp">Anexos</div>
+    <ol>
+      <li><a href="#ax1"><span class="n">A</span>Orçamento EUR / AMD</a></li>
+      <li><a href="#ax2"><span class="n">B</span>Checklist de preparação</a></li>
+      <li><a href="#ax3"><span class="n">C</span>Checklist de mala</a></li>
+      <li><a href="#ax4"><span class="n">D</span>Plano de emergência</a></li>
+      <li><a href="#ax5"><span class="n">E</span>Top 15 experiências</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- 1 RESUMO -->
+    <section id="s1">
+      <div class="sec-head"><span class="num">01</span><div><h2>Resumo da viagem</h2>
+        <div class="sub">A ideia em duas frases, mais a matriz de decisões que molda tudo o resto.</div></div></div>
+      <div class="prose">
+        <p>Um <strong>loop anti-horário</strong> a partir de Yerevan que troca cidades por altitude: sobe ao vulcão Aragats, mergulha no desfiladeiro de Debed a norte, atravessa as florestas de Dilijan, contorna o Lago Sevan, cruza o mítico passo de Selim e desce ao sul rústico de Syunik (Tatev, Goris, Vorotan) antes de fechar o círculo. É desenhado para <strong>fotógrafo solo</strong> que quer luz dourada, silêncio, trilhos e pedra antiga — com ruínas soviéticas espalhadas pelo caminho como bónus.</p>
+        <p>A filosofia de custo é simples: <strong>o carro e o combustível são o grande gasto; tudo o resto pode ser quase grátis</strong>. A maioria dos mosteiros não cobra entrada, o campismo selvagem é legal e as guesthouses de aldeia dão jantar caseiro por poucos euros. Alterna 3–4 noites de tenda (Sevan, Aragats, Vayots Dzor) com guesthouses simples para carregar baterias — literais e humanas.</p>
+      </div>
+      <div class="grid g3" style="margin-top:16px">
+        <div class="card"><div class="meta"><b>PERFIL</b></div><h4>Para quem é</h4><p>Solo, ritmo moderado, experiente, confortável com estradas rurais e terreno de montanha. Zero interesse em vida noturna, compras ou centros urbanos.</p></div>
+        <div class="card"><div class="meta"><b>FOCO</b></div><h4>O que procura</h4><p>Natureza selvagem, montanhas, desfiladeiros, mosteiros isolados, lagos, cascatas, fauna, dark sky e urbex soviético. Tranquilidade acima de tudo.</p></div>
+        <div class="card"><div class="meta"><b>REGRA DE OURO</b></div><h4>Como decidir</h4><p>Entre duas opções, escolhe sempre a mais remota, mais alta e mais barata — desde que a estrada seja segura e o depósito de combustível esteja acima de metade.</p></div>
+      </div>
+      <div class="note"><span class="lbl">Variantes</span><b>10 dias:</b> corta o dia de Jermuk e junta Debed num só dia. &nbsp;·&nbsp; <b>12 dias:</b> acrescenta a descida a Kapan/Meghri (o sul profundo) — ver Dia 11B no itinerário e as notas de fronteira na secção 22.</div>
+    </section>
+
+    <!-- 31 MAPA LÓGICO (colocado cedo por ser a lógica da rota) -->
+    <section id="s31">
+      <div class="sec-head"><span class="num">31</span><div><h2>Mapa lógico — porquê esta ordem e rota</h2>
+        <div class="sub">A geografia da Arménia é um anel de montanhas à volta de Yerevan. A rota segue esse anel para não repetir estrada.</div></div></div>
+
+      <figure class="mapfig">
+        <svg class="rmap" viewBox="0 0 420 560" role="img" aria-label="Mapa esquemático da rota em anel pela Arménia, de Yerevan e regresso">
+          <path class="land" d="M120 105 L205 58 L300 118 L360 205 L350 298 L385 360 L332 548 L285 470 L250 425 L200 405 L120 365 L98 300 L128 240 L108 165 Z"/>
+          <text class="region" x="232" y="78">LORI</text>
+          <text class="region" x="300" y="150">TAVUSH</text>
+          <text class="region" x="352" y="238" text-anchor="end">SEVAN</text>
+          <text class="region" x="196" y="312">VAYOTS DZOR</text>
+          <text class="region" x="352" y="486" text-anchor="end">SYUNIK</text>
+          <text class="region" x="112" y="402">ARARAT</text>
+          <!-- extension spur -->
+          <path class="route ext" d="M295 438 L332 512"/>
+          <!-- main loop -->
+          <path class="route" d="M170 330 L205 352 L150 235 L215 90 L285 180 L330 252 L300 322 L255 360 L332 360 L295 438 L135 378 L170 330"/>
+          <!-- nodes -->
+          <circle class="node" cx="205" cy="352" r="13"/><text class="nnum" x="205" y="352">1</text><text class="nlab" x="223" y="352">Garni · Geghard</text>
+          <circle class="node" cx="150" cy="235" r="13"/><text class="nnum" x="150" y="235">2</text><text class="nlab end" x="132" y="235">Aragats · Amberd</text>
+          <circle class="node" cx="215" cy="90" r="13"/><text class="nnum" x="215" y="90">3</text><text class="nlab" x="233" y="90">Debed · Haghpat</text>
+          <circle class="node" cx="285" cy="180" r="13"/><text class="nnum" x="285" y="180">4</text><text class="nlab" x="303" y="180">Dilijan</text>
+          <circle class="node" cx="330" cy="252" r="13"/><text class="nnum" x="330" y="252">5</text><text class="nlab" x="348" y="252">L. Sevan</text>
+          <circle class="node" cx="300" cy="322" r="13"/><text class="nnum" x="300" y="322">6</text><text class="nlab" x="317" y="322">Passo Selim</text>
+          <circle class="node" cx="255" cy="360" r="13"/><text class="nnum" x="255" y="360">7</text><text class="nlab end" x="237" y="360">Noravank</text>
+          <circle class="node" cx="332" cy="360" r="13"/><text class="nnum" x="332" y="360">8</text><text class="nlab" x="350" y="360">Jermuk</text>
+          <circle class="node" cx="295" cy="438" r="13"/><text class="nnum" x="295" y="438">9</text><text class="nlab" x="313" y="438">Goris · Tatev</text>
+          <circle class="node ext" cx="332" cy="512" r="13"/><text class="nnum" x="332" y="512">10</text><text class="nlab" x="350" y="512">Meghri (ext.)</text>
+          <!-- Khor Virap + Yerevan hub -->
+          <circle class="kv" cx="135" cy="378" r="7"/><text class="nlab end" x="120" y="378">Khor Virap</text>
+          <circle class="hub" cx="170" cy="330" r="8.5"/><text class="hublab" x="170" y="312">YEREVAN · EVN</text>
+        </svg>
+        <div class="maplegend">
+          <span><i></i> Rota principal (11 dias)</span>
+          <span><i class="ext"></i> Extensão a Meghri (12 dias)</span>
+          <span class="cap">Esquemático · não à escala · números = ordem dos dias</span>
+        </div>
+      </figure>
+
+      <div class="prose">
+        <p>Yerevan está a oeste-centro; quase tudo o que interessa forma um arco de norte a sul pela borda montanhosa do país. Fazer o percurso <strong>em anel anti-horário</strong> (NO → N → NE → E → SE → S → regresso pela planície) significa que <strong>nunca refazes o mesmo troço</strong> e ganhas altitude de forma gradual — bom para aclimatação no Aragats e para deixar o sul remoto (o clímax paisagístico) para o fim.</p>
+        <p>Porquê esta ordem em concreto:</p>
+      </div>
+      <ul class="clean">
+        <li><b>Aragats primeiro</b> — a subida ao Lago Kari (3 190 m) e à estação de raios cósmicos exige tempo bom e pernas frescas; fá-lo antes que o cansaço acumule. Também é o melhor dark sky logo à porta de Yerevan.</li>
+        <li><b>Norte (Debed + Dilijan) a seguir</b> — floresta e mosaicos de mosteiros; clima mais húmido, portanto encaixa-se cedo, quando ainda tens margem para reorganizar se chover.</li>
+        <li><b>Sevan como charneira</b> — o grande lago faz a transição natural entre o norte florestal e o sul árido; noite de tenda e estrelas.</li>
+        <li><b>Selim → Vayots Dzor → Syunik no fim</b> — as estradas mais espetaculares e os mosteiros mais dramáticos (Noravank, Tatev) ficam para o clímax. O regresso a Yerevan pela M2/planície do Ararat é rápido e permite um último nascer do sol em Khor Virap.</li>
+        <li><b>Combustível e altitude</b> — o anel mantém-te sempre a menos de 60–90 min de um posto nas etapas críticas, exceto Aragats e Selim, onde enches antes (secção 25).</li>
+      </ul>
+      <div class="note"><span class="lbl">Sequência resumida</span>Yerevan → Garni/Geghard → Aragats/Amberd → Debed (Alaverdi/Haghpat) → Dilijan → Sevan → Passo de Selim → Noravank/Vayots Dzor → Jermuk → Goris/Tatev → <span style="opacity:.7">(Meghri)</span> → Khor Virap → Yerevan.</div>
+    </section>
+
+    <!-- 2 ITINERÁRIO -->
+    <section id="s2">
+      <div class="sec-head"><span class="num">02</span><div><h2>Itinerário dia a dia</h2>
+        <div class="sub">Cada dia traz a etapa de condução (km/tempo), o programa e onde dormir com justificação. Horas assumem luz de setembro: nascer ~06:50, pôr ~19:15.</div></div></div>
+      <div class="route">
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 01 · Chegada</div>
+          <h3>Zvartnots → Garni</h3>
+          <div class="leg"><span>🚗 <b>~40 km</b></span><span>⏱ <b>50 min</b></span><span>Estrada asfaltada, fácil</span></div>
+          <p>Levanta o carro no aeroporto (reserva antecipada; ver secção 19). Foge de Yerevan de imediato e instala-te numa aldeia. Compra mantimentos a caminho num SAS/Yerevan City. Se chegares de noite, dorme perto do aeroporto e arranca de manhã.</p>
+          <div class="sleep"><span class="lbl">Dormir · Garni (aldeia)</span><b>Guesthouse familiar</b> (~8 000–12 000 AMD). Porquê: base tranquila a 5 min do desfiladeiro, jantar caseiro para recuperar da viagem, e ficas posicionado para o nascer do sol na Sinfonia das Pedras.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 02 · Basalto & rocha</div>
+          <h3>Garni · Geghard · Sinfonia das Pedras</h3>
+          <div class="leg"><span>🚗 <b>~25 km</b></span><span>⏱ <b>40 min</b> (local)</span><span>+ caminhada no desfiladeiro</span></div>
+          <p><b>Nascer do sol</b> descendo ao desfiladeiro de Garni para a <b>Sinfonia das Pedras</b> (colunas de basalto hexagonal) — sozinho antes das excursões. Templo de Garni (helenístico, único do género na ex-URSS) e mosteiro rupestre de <b>Geghard</b> ao início da manhã, antes das multidões. Tarde: sobe a Aragatsotn.</p>
+          <div class="leg"><span>🚗 Garni → Amberd</span><span><b>~85 km · 2h</b></span><span>via Ashtarak/Byurakan</span></div>
+          <div class="sleep"><span class="lbl">Dormir · Byurakan ou tenda em Amberd</span><b>Guesthouse em Byurakan</b> (~8 000 AMD) ou <b>campismo selvagem</b> junto à fortaleza de Amberd (~2 300 m). Porquê: posição alta para o dia de Aragats e primeiro céu escuro. Se acampas, enche água e combustível antes de subir.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 03 · O vulcão</div>
+          <h3>Mt Aragats · Lago Kari · Estação de raios cósmicos</h3>
+          <div class="leg"><span>🚗 <b>~30 km</b> (subida)</span><span>⏱ <b>1h</b></span><span>Asfalto degradado, alta montanha</span></div>
+          <p>Sobe à estrada mais alta do país até ao <b>Lago Kari (3 190 m)</b>. Caminhada ao <b>pico Sul do Aragats (3 888 m)</b> para os aclimatados e em forma (ver Trail Guide) — as vistas das quatro crateras são imbatíveis. Visita a <b>Estação de Investigação de Raios Cósmicos</b> soviética (1943) e o observatório inacabado ao lado (urbex, secção 13). Fim de tarde no Observatório de Byurakan.</p>
+          <div class="sleep"><span class="lbl">Dormir · Lago Kari (tenda) ou Byurakan</span><b>Campismo selvagem no Lago Kari</b> — dark sky de topo, silêncio absoluto. Porquê: a 3 200 m o céu é dos mais escuros e limpos do país. <b>Frio intenso à noite</b> (perto de 0 °C) — só se o saco-cama aguentar; senão, guesthouse em Byurakan.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 04 · Desfiladeiro de Debed</div>
+          <h3>Aragats → Alaverdi · Haghpat · Sanahin</h3>
+          <div class="leg"><span>🚗 <b>~180 km</b></span><span>⏱ <b>3h–3h30</b></span><span>via Spitak (M6, desce ao desfiladeiro)</span></div>
+          <p>Longa transferência para o norte. Paragem em <b>Spitak</b> (igreja rosa pós-sismo). Chega ao <b>desfiladeiro de Debed</b>: mosteiros UNESCO de <b>Haghpat</b> e <b>Sanahin</b> (grátis, séc. X, dos mais belos do país). <b>Alaverdi</b> é uma cidade mineira soviética de cobre em decadência, com teleférico aéreo e ruínas industriais fotogénicas.</p>
+          <div class="sleep"><span class="lbl">Dormir · Haghpat ou Alaverdi</span><b>Guesthouse em Haghpat</b> (~9 000 AMD, vista sobre o desfiladeiro). Porquê: acordar ao lado do mosteiro sem ninguém, e posição para explorar Debed no dia seguinte.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 05 · Frescos escondidos</div>
+          <h3>Debed profundo → Dilijan</h3>
+          <div class="leg"><span>🚗 <b>~110 km</b></span><span>⏱ <b>2h30</b> (com paragens)</span><span>desfiladeiro + subida a Dilijan</span></div>
+          <p>Manhã no baixo Debed: <b>Odzun</b> (basílica no planalto), <b>Kobayr</b> (mosteiro semi-ruína agarrado à falésia, curta subida a pé, frescos), e <b>Akhtala</b> (frescos bizantinos + mina). Depois cruza para <b>Dilijan</b>, a "Suíça arménia": floresta densa a começar a virar dourada.</p>
+          <div class="sleep"><span class="lbl">Dormir · Dilijan</span><b>Hostel / guesthouse em Dilijan</b> (dormitório ~6 000 AMD; quarto ~10 000). Porquê: cidade-base pequena e tranquila, boa comida, e trilhos do Parque Nacional à porta.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 06 · Floresta</div>
+          <h3>Parque Nacional de Dilijan · Lago Gosh · Haghartsin</h3>
+          <div class="leg"><span>🚗 <b>~40 km</b></span><span>⏱ <b>1h</b> (local)</span><span>+ caminhadas na floresta</span></div>
+          <p>Dia de trilhos. <b>Lago Gosh</b> por caminho florestal (troço da Transcaucasian Trail), mosteiro de <b>Goshavank</b>, e <b>Haghartsin</b> encravado nas árvores. Evita o comercial <b>Lago Parz</b> (secção 9) exceto de passagem. Observação de fauna ao entardecer nas clareiras (secção 7).</p>
+          <div class="sleep"><span class="lbl">Dormir · Dilijan ou tenda na floresta</span><b>Campismo selvagem</b> numa clareira do parque, ou repetir Dilijan. Porquê: floresta silenciosa, hipótese de veados/javalis ao amanhecer; se o tempo virar, recolhe à guesthouse.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 07 · O grande lago</div>
+          <h3>Dilijan → Lago Sevan · Noratus · Casa dos Escritores</h3>
+          <div class="leg"><span>🚗 <b>~90 km</b></span><span>⏱ <b>2h</b></span><span>Passo de Semyonovka (hairpins) + costa</span></div>
+          <p>Cruza o <b>passo de Semyonovka</b> (miradouro no topo) até ao <b>Lago Sevan</b> (1 900 m). Vê a <b>Casa de Repouso dos Escritores</b> (modernismo soviético em cantilever, 1963) e evita as multidões de Sevanavank ao meio-dia. Segue para o <b>campo de khachkars de Noratus</b> (~900 cruzes de pedra, atmosférico e vazio) e para a costa leste/península de <b>Artanish</b>, mais selvagem.</p>
+          <div class="sleep"><span class="lbl">Dormir · Costa de Sevan (tenda)</span><b>Campismo selvagem</b> na costa sul/leste ou península de Artanish. Porquê: dark sky sobre a água, nascer do sol sobre o lago, e é grátis. Prato de <b>truta/sig</b> grelhado numa tasca da costa ao jantar.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 08 · O passo mítico</div>
+          <h3>Sevan → Passo de Selim → Noravank</h3>
+          <div class="leg"><span>🚗 <b>~120 km</b></span><span>⏱ <b>2h30–3h</b></span><span>M10, serpentina a 2 410 m (buracos)</span></div>
+          <p><b>Nascer do sol</b> sobre Sevan, depois a estrada-rainha: o <b>Passo de Vardenyats/Selim</b> com o <b>caravançarai de Orbelian</b> (1332, o mais bem preservado da rota da seda). Desce a <b>Vayots Dzor</b> até <b>Noravank</b> — o mosteiro das falésias vermelhas, deslumbrante ao fim da tarde quando a rocha arde.</p>
+          <div class="sleep"><span class="lbl">Dormir · Yeghegnadzor / vale de Yeghegis</span><b>Guesthouse em Yeghegnadzor ou Yeghegis</b> (~9 000 AMD). Porquê: base central de Vayots Dzor, jantar caseiro, e ponto de partida para a caminhada de Smbataberd.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 09 · Cascatas & sanatórios</div>
+          <h3>Smbataberd · Jermuk · descida a Syunik</h3>
+          <div class="leg"><span>🚗 <b>~150 km</b></span><span>⏱ <b>3h</b> (com desvios)</span><span>montanha, bom asfalto</span></div>
+          <p>Manhã: caminhada à fortaleza de <b>Smbataberd</b> e mosteiro de <b>Tsaghats Kar</b> (cristas panorâmicas). Desvio a <b>Jermuk</b> — a <b>cascata "Cabelo de Sereia"</b> (~70 m) e os <b>sanatórios soviéticos abandonados</b> (urbex, secção 13). Continua para sul até <b>Syunik</b>, parando em <b>Zorats Karer</b> (Carahunge, o "Stonehenge arménio").</p>
+          <div class="sleep"><span class="lbl">Dormir · Goris</span><b>Guesthouse em Goris</b> (~9 000–12 000 AMD, casas de pedra características). Porquê: base perfeita para Tatev e Khndzoresk, restaurantes bons e baratos, e o vale de casas-caverna à porta.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 10 · Clímax do sul</div>
+          <h3>Tatev · Ponte do Diabo · Khndzoresk</h3>
+          <div class="leg"><span>🚗 <b>~80 km</b></span><span>⏱ <b>2h</b> (serpentinas lentas)</span><span>desfiladeiro de Vorotan</span></div>
+          <p><b>Mosteiro de Tatev</b> (séc. IX) suspenso sobre o desfiladeiro de Vorotan — chega cedo. Escolhe: <b>teleférico "Wings of Tatev"</b> (o mais longo do mundo em cabo reversível) <b>ou</b> desce de carro pelo desfiladeiro até à <b>Ponte do Diabo</b> (ponte natural de travertino + fontes termais). À tarde, a <b>aldeia-caverna de Khndzoresk</b> e a sua <b>ponte suspensa</b>.</p>
+          <div class="note" style="margin:12px 0 0"><span class="lbl">Escolha do dia</span><b>Teleférico:</b> vistas aéreas, rápido, ~9 000 AMD (ida/volta) — filas ao fim-de-semana. &nbsp;<b>Carro pelo desfiladeiro:</b> grátis, Ponte do Diabo e termas, mas estrada estreita e lenta. <b>Recomendo o carro</b> para o teu perfil (mais natureza, menos multidão).</div>
+          <div class="sleep"><span class="lbl">Dormir · Goris</span><b>Repetir Goris</b>. Porquê: evitas mudar de mala, e ficas posicionado para o regresso (ou para a extensão a Meghri).</div>
+        </div></div>
+
+        <div class="day"><div class="day-card">
+          <div class="day-num">Dia 11 · Regresso</div>
+          <h3>Goris → Khor Virap → Yerevan</h3>
+          <div class="leg"><span>🚗 <b>~250 km</b></span><span>⏱ <b>4h–4h30</b></span><span>M2 + desvio Khor Virap</span></div>
+          <p>Longo regresso pela planície do Ararat. Se o tempo estiver limpo, desvio a <b>Khor Virap</b> para a vista clássica do <b>Monte Ararat</b> (melhor de manhã; pode ter multidões — secção 9). Devolve o carro em Zvartnots com folga, ou dorme perto do aeroporto para um voo cedo.</p>
+          <div class="sleep"><span class="lbl">Dormir · Perto de Zvartnots / partida</span><b>Guesthouse perto do aeroporto</b> ou voo de saída. Porquê: margem para imprevistos de estrada e devolução do carro sem stress.</div>
+        </div></div>
+
+        <div class="day"><div class="day-card" style="border-style:dashed">
+          <div class="day-num">Dia 11B–12 · Extensão (opcional)</div>
+          <h3>Sul profundo: Kapan · Meghri</h3>
+          <div class="leg"><span>🚗 <b>~300 km</b> (ida/volta desde Goris)</span><span>⏱ <b>6h+</b> de serpentinas</span><span>terreno remoto</span></div>
+          <p>Para 12 dias: desce a <b>Kapan</b> (Monte Khustup, mosteiro de Vahanavank) e <b>Meghri</b> (subtropical, fortaleza, extremo sul junto ao Irão). Estrada dramática mas exigente. <b>Lê a secção 22 sobre zonas de fronteira antes de decidir</b> — alguns troços passam perto da fronteira com o Azerbaijão.</p>
+          <div class="sleep"><span class="lbl">Dormir · Kapan ou Meghri</span><b>Guesthouse em Kapan/Meghri</b> (~9 000 AMD). Porquê: quebra as serpentinas em duas metades e dá tempo para o extremo sul.</div>
+        </div></div>
+
+      </div>
+    </section>
+
+    <!-- 3 ONDE DORMIR -->
+    <section id="s3">
+      <div class="sec-head"><span class="num">03</span><div><h2>Onde dormir cada noite — e porquê</h2>
+        <div class="sub">Resumo rápido das opções por noite, com a lógica por trás de cada escolha (detalhe integrado no itinerário).</div></div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="num">Noite</th><th>Zona</th><th>Tipo</th><th class="num">Custo/noite</th><th>Porquê</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Garni</td><td>Guesthouse</td><td class="num">8–12 000 AMD</td><td>Tranquila, jantar caseiro, junto ao desfiladeiro</td></tr>
+            <tr><td class="num">2</td><td>Byurakan / Amberd</td><td>Guesthouse ou tenda</td><td class="num">0–8 000 AMD</td><td>Posição alta p/ Aragats + 1.º céu escuro</td></tr>
+            <tr><td class="num">3</td><td>Lago Kari (3 190 m)</td><td>Tenda (ou Byurakan)</td><td class="num">0 AMD</td><td>Dark sky de topo; só com saco-cama quente</td></tr>
+            <tr><td class="num">4</td><td>Haghpat / Alaverdi</td><td>Guesthouse</td><td class="num">8–10 000 AMD</td><td>Acordar ao lado do mosteiro UNESCO</td></tr>
+            <tr><td class="num">5</td><td>Dilijan</td><td>Hostel / guesthouse</td><td class="num">6–10 000 AMD</td><td>Base de trilhos, boa comida barata</td></tr>
+            <tr><td class="num">6</td><td>Dilijan NP</td><td>Tenda ou guesthouse</td><td class="num">0–10 000 AMD</td><td>Floresta silenciosa, fauna ao amanhecer</td></tr>
+            <tr><td class="num">7</td><td>Costa de Sevan / Artanish</td><td>Tenda</td><td class="num">0 AMD</td><td>Estrelas sobre a água, nascer do sol no lago</td></tr>
+            <tr><td class="num">8</td><td>Yeghegnadzor / Yeghegis</td><td>Guesthouse</td><td class="num">8–10 000 AMD</td><td>Central em Vayots Dzor, base de Smbataberd</td></tr>
+            <tr><td class="num">9</td><td>Goris</td><td>Guesthouse</td><td class="num">9–12 000 AMD</td><td>Casas de pedra, base p/ Tatev e Khndzoresk</td></tr>
+            <tr><td class="num">10</td><td>Goris</td><td>Guesthouse</td><td class="num">9–12 000 AMD</td><td>Não desfazer mala; posição p/ regresso</td></tr>
+            <tr><td class="num">11</td><td>Perto de Zvartnots</td><td>Guesthouse</td><td class="num">10–14 000 AMD</td><td>Devolução do carro + voo sem stress</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note"><span class="lbl">Reservas</span>Em setembro (fora do pico de verão) raramente precisas de reservar guesthouses de aldeia com antecedência — chega-se e pergunta-se, ou reserva-se no próprio dia via Booking/telefone. <b>Exceção:</b> Dilijan e Goris ao fim-de-semana. Campismo selvagem não precisa de nada, mas em terreno privado pede-se sempre autorização ao dono (quase sempre dada, muitas vezes com chá).</div>
+    </section>
+
+    <!-- 4 KM E TEMPO -->
+    <section id="s4">
+      <div class="sec-head"><span class="num">04</span><div><h2>Km e tempo de condução entre etapas</h2>
+        <div class="sub">Tempos reais de estrada arménia (mais lentos que o GPS otimista: buracos, gado, serpentinas). Não conta paragens.</div></div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="num">Dia</th><th>Etapa</th><th class="num">km</th><th class="num">Tempo</th><th>Estrada</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Zvartnots → Garni</td><td class="num">40</td><td class="num">0h50</td><td>Asfalto bom</td></tr>
+            <tr><td class="num">2</td><td>Garni ↔ Geghard (local)</td><td class="num">25</td><td class="num">0h40</td><td>Bom</td></tr>
+            <tr><td class="num">2</td><td>Garni → Amberd</td><td class="num">85</td><td class="num">2h00</td><td>Bom + subida degradada no fim</td></tr>
+            <tr><td class="num">3</td><td>Amberd → Lago Kari ↔</td><td class="num">30</td><td class="num">1h00</td><td>Asfalto muito degradado</td></tr>
+            <tr><td class="num">4</td><td>Aragats → Alaverdi (Debed)</td><td class="num">180</td><td class="num">3h15</td><td>M6, boa; desce ao desfiladeiro</td></tr>
+            <tr><td class="num">5</td><td>Debed loop → Dilijan</td><td class="num">110</td><td class="num">2h30</td><td>Desfiladeiro + subida</td></tr>
+            <tr><td class="num">6</td><td>Dilijan NP (local)</td><td class="num">40</td><td class="num">1h00</td><td>Estradas florestais</td></tr>
+            <tr><td class="num">7</td><td>Dilijan → Sevan → Noratus</td><td class="num">90</td><td class="num">2h00</td><td>Passo Semyonovka + costa</td></tr>
+            <tr><td class="num">8</td><td>Sevan → Selim → Noravank</td><td class="num">120</td><td class="num">2h45</td><td>M10, passo 2 410 m, buracos</td></tr>
+            <tr><td class="num">9</td><td>Yeghegnadzor → Jermuk → Goris</td><td class="num">150</td><td class="num">3h00</td><td>Montanha, bom asfalto</td></tr>
+            <tr><td class="num">10</td><td>Goris → Tatev → Khndzoresk ↔</td><td class="num">80</td><td class="num">2h00</td><td>Serpentinas lentas (Vorotan)</td></tr>
+            <tr><td class="num">11</td><td>Goris → Khor Virap → Yerevan</td><td class="num">250</td><td class="num">4h15</td><td>M2 + desvio</td></tr>
+          </tbody>
+          <tfoot><tr><td></td><td>Total (11 dias, s/ Meghri)</td><td class="num">~1 200</td><td class="num">~25 h</td><td>≈ 2h15/dia médio</td></tr></tfoot>
+        </table>
+      </div>
+      <p class="prose" style="margin-top:12px;color:var(--ink-soft);font-size:14px">Com acessos a trilhos, miradouros e a extensão de Meghri (+~300 km), conta <strong>~1 550 km reais</strong> no total (base do orçamento de combustível). Regra prática: <strong>50–60 km/h de média</strong> em estrada de montanha arménia.</p>
+    </section>
+
+    <!-- MAPS -->
+    <section id="smap">
+      <div class="sec-head"><span class="num">↗</span><div><h2>Pontos-chave no Google Maps</h2>
+        <div class="sub">Toca para abrir cada local no Maps (abre noutro separador). Os 20 imperdíveis têm link próprio na secção 8; aqui ficam as bases de dormida, os passos e os postos de combustível.</div></div></div>
+      <div class="grid g3">
+        <div class="card"><h4>🛏 Bases para dormir</h4><ul class="clean">
+          <li><b>N1 · Garni</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Garni%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N2 · Byurakan</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Byurakan%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N3 · Lago Kari (tenda)</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Lake%20Kari%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N4 · Haghpat</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Haghpat%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N5–6 · Dilijan</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Dilijan%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N6 · Dilijan NP (tenda)</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Dilijan%20National%20Park%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N7 · Sevan · Artanish (tenda)</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Artanish%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N8 · Yeghegnadzor / Yeghegis</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yeghegis%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N9–10 · Goris</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Goris%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>N11 · Zvartnots (aeroporto)</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Zvartnots%20International%20Airport" target="_blank" rel="noopener">abrir</a></li>
+        </ul></div>
+        <div class="card"><h4>⛰ Passos & estradas panorâmicas</h4><ul class="clean">
+          <li><b>Passo de Vardenyats / Selim</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Vardenyats%20Pass%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Passo de Semyonovka</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Semyonovka%20Pass%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Subida ao Lago Kari (Aragats)</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kari%20Lich%20road%20Aragats%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Desfiladeiro de Tatev / Vorotan</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tatev%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Ponte do Diabo (termas)</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Devils%20Bridge%20Tatev%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Desfiladeiro de Debed</b> <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Debed%20Canyon%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+        </ul></div>
+        <div class="card"><h4>⛽ Abastecer & regresso</h4><ul class="clean">
+          <li><b>Ashtarak</b> (antes do Aragats) <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Ashtarak%20Armenia%20gas%20station" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Vanadzor</b> (norte) <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Vanadzor%20Armenia%20gas%20station" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Vardenis</b> (antes de Selim) <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Vardenis%20Armenia%20gas%20station" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Goris</b> (sul) <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Goris%20Armenia%20gas%20station" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Kapan</b> (antes de Meghri) <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kapan%20Armenia%20gas%20station" target="_blank" rel="noopener">abrir</a></li>
+          <li><b>Khor Virap</b> (regresso) <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Khor%20Virap%20Armenia" target="_blank" rel="noopener">abrir</a></li>
+        </ul></div>
+      </div>
+      <div class="note"><span class="lbl">Na estrada</span>Os links abrem o Maps online. Para zonas sem rede, <b>descarrega o mapa da Arménia offline</b> no Google Maps (ou usa Organic Maps) antes de partires — ver secção 23.</div>
+    </section>
+
+    <!-- 5 TRAIL GUIDE -->
+    <section id="s5">
+      <div class="sec-head"><span class="num">05</span><div><h2>Trail guide — as caminhadas principais</h2>
+        <div class="sub">Dificuldade · distância · duração · melhor hora · beleza (★) · vale a pena. Usa a app <b>HikeArmenia</b> para tracks oficiais.</div></div></div>
+
+      <div class="grid g2">
+        <div class="card">
+          <div class="tags"><span class="tag a">Exigente</span><span class="tag">Altitude</span></div>
+          <h3>Pico Sul do Aragats (3 888 m)</h3>
+          <div class="meta" style="margin-top:8px"><span><b>Dist.</b> ~7 km ida/volta</span><span><b>Duração</b> 5–6 h</span><span><b>Desnível</b> +700 m</span></div>
+          <p><b>Melhor hora:</b> partir 07:00–08:00 do Lago Kari; descer antes das trovoadas da tarde. Terreno de pedra solta e neve residual. O mais acessível dos 4 picos (o Norte, 4 090 m, exige escalada/experiência).</p>
+          <p class="stars">★★★★★ <span style="color:var(--ink-soft);font-family:var(--sans);font-size:13px">· Vale muito a pena se fores fisicamente apto e o tempo estiver limpo.</span></p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag t">Fácil–Moderado</span><span class="tag">Floresta</span></div>
+          <h3>Lago Gosh (Dilijan)</h3>
+          <div class="meta" style="margin-top:8px"><span><b>Dist.</b> ~6 km (circuito)</span><span><b>Duração</b> 2–3 h</span><span><b>Desnível</b> +250 m</span></div>
+          <p><b>Melhor hora:</b> manhã ou fim de tarde para fauna. Troço da Transcaucasian Trail por floresta virgem até um pequeno lago de montanha. Bem marcado.</p>
+          <p class="stars">★★★★<span class="off">★</span> <span style="color:var(--ink-soft);font-family:var(--sans);font-size:13px">· Sim — a essência de Dilijan em meio dia.</span></p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag t">Moderado</span><span class="tag">Cristas</span></div>
+          <h3>Smbataberd + Tsaghats Kar (Yeghegis)</h3>
+          <div class="meta" style="margin-top:8px"><span><b>Dist.</b> ~9 km</span><span><b>Duração</b> 3–4 h</span><span><b>Desnível</b> +450 m</span></div>
+          <p><b>Melhor hora:</b> manhã (sombra e luz lateral). Sobe a uma fortaleza medieval numa crista com vistas de 360° e continua ao mosteiro escondido de Tsaghats Kar.</p>
+          <p class="stars">★★★★<span class="off">★</span> <span style="color:var(--ink-soft);font-family:var(--sans);font-size:13px">· Sim — panorâmica + solidão.</span></p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag t">Fácil</span><span class="tag">Falésia</span></div>
+          <h3>Kobayr (Debed)</h3>
+          <div class="meta" style="margin-top:8px"><span><b>Dist.</b> ~2 km ida/volta</span><span><b>Duração</b> 40–60 min</span><span><b>Desnível</b> +150 m</span></div>
+          <p><b>Melhor hora:</b> manhã. Subida curta mas íngreme da estação de comboio até um mosteiro semi-ruína com frescos, agarrado à falésia sobre o desfiladeiro. Mágico e quase sempre vazio.</p>
+          <p class="stars">★★★★<span class="off">★</span> <span style="color:var(--ink-soft);font-family:var(--sans);font-size:13px">· Sim — ruína romântica com frescos.</span></p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag t">Fácil–Moderado</span><span class="tag">Canyon</span></div>
+          <h3>Aldeia-caverna de Khndzoresk</h3>
+          <div class="meta" style="margin-top:8px"><span><b>Dist.</b> ~3–4 km</span><span><b>Duração</b> 1.5–2 h</span><span><b>Desnível</b> +200 m (regresso)</span></div>
+          <p><b>Melhor hora:</b> fim de tarde (luz dourada nas grutas). Ponte suspensa de 160 m sobre o desfiladeiro e habitações rupestres abandonadas onde se viveu até aos anos 1950.</p>
+          <p class="stars">★★★★<span class="off">★</span> <span style="color:var(--ink-soft);font-family:var(--sans);font-size:13px">· Sim — surreal e pouco explorado a fundo.</span></p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag">Fácil</span><span class="tag">Basalto</span></div>
+          <h3>Desfiladeiro de Garni · Sinfonia das Pedras</h3>
+          <div class="meta" style="margin-top:8px"><span><b>Dist.</b> ~3 km ida/volta</span><span><b>Duração</b> 1–1.5 h</span><span><b>Desnível</b> +120 m</span></div>
+          <p><b>Melhor hora:</b> nascer do sol (sem excursões). Desce ao rio Azat até às colunas de basalto tipo órgão. Estrada 4x4 alternativa se não quiseres caminhar.</p>
+          <p class="stars">★★★★<span class="off">★</span> <span style="color:var(--ink-soft);font-family:var(--sans);font-size:13px">· Sim — icónico e íntimo de manhã cedo.</span></p>
+        </div>
+      </div>
+      <div class="note warn"><span class="lbl">Segurança nos trilhos</span><b>Cães de pastor</b> são o perigo n.º 1 (secção 22), não os lobos. Leva bastões, começa cedo, diz a alguém o teu plano e regista trilhos na app HikeArmenia. A altitude do Aragats é a sério — vira para trás se o tempo fechar.</div>
+    </section>
+
+    <!-- 6 SUNRISE/SUNSET -->
+    <section id="s6">
+      <div class="sec-head"><span class="num">06</span><div><h2>Melhores locais de nascer e pôr do sol</h2>
+        <div class="sub">Em setembro: nascer ~06:45–07:00, pôr ~19:00–19:20. Chega 30 min antes.</div></div></div>
+      <div class="grid g3">
+        <div class="card"><span class="tag g">Nascer</span><h4>Sinfonia das Pedras (Garni)</h4><p>Sol a rasar as colunas de basalto no fundo do desfiladeiro, sem ninguém.</p></div>
+        <div class="card"><span class="tag g">Nascer</span><h4>Lago Sevan / Artanish</h4><p>Sol a subir do outro lado da água — reflexos e névoa matinal.</p></div>
+        <div class="card"><span class="tag g">Nascer</span><h4>Khor Virap + Ararat</h4><p>A silhueta do Ararat a acender-se atrás do mosteiro. Vai cedo, antes das excursões.</p></div>
+        <div class="card"><span class="tag a">Pôr</span><h4>Noravank</h4><p>As falésias vermelhas incendeiam-se ao entardecer — o melhor golden hour do país.</p></div>
+        <div class="card"><span class="tag a">Pôr</span><h4>Tatev sobre o desfiladeiro</h4><p>Luz lateral no mosteiro e sombras a encher o abismo de Vorotan.</p></div>
+        <div class="card"><span class="tag a">Pôr</span><h4>Lago Kari (Aragats)</h4><p>A 3 200 m, o sol some atrás das cristas vulcânicas; céu a passar a estrelado.</p></div>
+        <div class="card"><span class="tag a">Pôr</span><h4>Passo de Selim</h4><p>Serpentina dourada vista de cima, com o caravançarai na curva.</p></div>
+        <div class="card"><span class="tag g">Nascer</span><h4>Amberd / vertentes de Aragats</h4><p>Mar de nuvens no vale a norte, fortaleza em contraluz.</p></div>
+        <div class="card"><span class="tag a">Pôr</span><h4>Khndzoresk</h4><p>Grutas e ponte suspensa em luz quente; ideal para a tarde do Dia 10.</p></div>
+      </div>
+    </section>
+
+    <!-- 7 FAUNA -->
+    <section id="s7">
+      <div class="sec-head"><span class="num">07</span><div><h2>Locais de observação de fauna</h2>
+        <div class="sub">Setembro é bom: animais ativos antes do inverno. Amanhecer e entardecer, binóculos, paciência e silêncio.</div></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>Florestas de Dilijan & Lori</h4><p><b>Urso-pardo</b> (raro, ao amanhecer), <b>javali</b>, <b>veado-vermelho</b>, raposa, esquilos. Guarda sempre a comida fora do alcance ao acampar.</p></div>
+        <div class="card"><h4>Vertentes de Aragats & planaltos</h4><p><b>Cabra-bezoar</b>, <b>perdiz-das-neves-do-Cáspio</b>, e aves de rapina de altitude. Terreno aberto, ótimo para binóculos.</p></div>
+        <div class="card"><h4>Reserva de Khosrov (junto a Garni)</h4><p>Cabra-bezoar e muflão-arménio; exige registo/guia mas é dos melhores sítios de fauna. Alternativa: cristas de Vayots Dzor.</p></div>
+        <div class="card"><h4>Lago Sevan & zonas húmidas</h4><p><b>Gaivota-arménia</b> (endémica), garças, aves migratórias de passagem em setembro. Península de Artanish é sossegada.</p></div>
+        <div class="card"><h4>Desfiladeiros do sul (Syunik)</h4><p>Abutres — <b>grifo</b>, <b>abutre-do-Egito</b>, e o raro <b>quebra-ossos (lammergeier)</b> — planam sobre Vorotan e Tatev. Leopardo-do-Cáucaso existe (Shikahogh) mas é praticamente impossível de ver.</p></div>
+        <div class="card"><h4>Aldeias da planície do Ararat</h4><p><b>Cegonhas-brancas</b> ninham em postes de eletricidade — fotografia fácil de estrada em maio–setembro (algumas partem no fim do mês).</p></div>
+      </div>
+      <div class="note warn"><span class="lbl">Atenção</span>A <b>víbora-arménia</b> existe em terreno rochoso e quente; olha onde pões os pés e as mãos. Nunca te aproximes de rebanhos para "ver melhor" — atrais os cães de pastor.</div>
+    </section>
+
+    <!-- 8 TOP 20 -->
+    <section id="s8">
+      <div class="sec-head"><span class="num">08</span><div><h2>Top 20 locais imperdíveis</h2>
+        <div class="sub">Ordenados pela rota, não por ranking. Todos encaixam no itinerário.</div></div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="num">#</th><th>Local</th><th>Porquê</th><th>Dia</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td><b>Sinfonia das Pedras</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Symphony%20of%20Stones%20Garni%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Colunas de basalto hexagonal no desfiladeiro</td><td>2</td></tr>
+            <tr><td class="num">2</td><td><b>Mosteiro de Geghard</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Geghard%20Monastery%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Rupestre, escavado na rocha, UNESCO</td><td>2</td></tr>
+            <tr><td class="num">3</td><td><b>Fortaleza de Amberd</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Amberd%20Fortress%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Ruína do séc. VII nas vertentes do Aragats</td><td>2</td></tr>
+            <tr><td class="num">4</td><td><b>Lago Kari + Aragats</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Lake%20Kari%20Aragats%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Lago glaciar a 3 190 m, cume vulcânico</td><td>3</td></tr>
+            <tr><td class="num">5</td><td><b>Estação de raios cósmicos</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Aragats%20Cosmic%20Ray%20Research%20Station%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Ciência soviética abandonada a 3 200 m</td><td>3</td></tr>
+            <tr><td class="num">6</td><td><b>Haghpat & Sanahin</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Haghpat%20Monastery%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Mosteiros UNESCO no desfiladeiro de Debed</td><td>4</td></tr>
+            <tr><td class="num">7</td><td><b>Kobayr</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kobayr%20Monastery%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Mosteiro-ruína na falésia, com frescos</td><td>5</td></tr>
+            <tr><td class="num">8</td><td><b>Akhtala</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Akhtala%20Monastery%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Frescos bizantinos + mina de cobre</td><td>5</td></tr>
+            <tr><td class="num">9</td><td><b>Lago Gosh & Goshavank</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Goshavank%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Lago florestal + mosteiro na mata</td><td>6</td></tr>
+            <tr><td class="num">10</td><td><b>Haghartsin</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Haghartsin%20Monastery%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Mosteiro encravado na floresta de Dilijan</td><td>6</td></tr>
+            <tr><td class="num">11</td><td><b>Casa dos Escritores (Sevan)</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sevan%20Writers%20House%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Modernismo soviético em cantilever</td><td>7</td></tr>
+            <tr><td class="num">12</td><td><b>Khachkars de Noratus</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Noratus%20Cemetery%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>~900 cruzes de pedra num campo vazio</td><td>7</td></tr>
+            <tr><td class="num">13</td><td><b>Passo & caravançarai de Selim</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Selim%20Caravanserai%20Orbelian%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Serpentina a 2 410 m + estalagem de 1332</td><td>8</td></tr>
+            <tr><td class="num">14</td><td><b>Mosteiro de Noravank</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Noravank%20Monastery%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Falésias vermelhas, o melhor pôr do sol</td><td>8</td></tr>
+            <tr><td class="num">15</td><td><b>Smbataberd</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Smbataberd%20Fortress%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Fortaleza numa crista panorâmica</td><td>9</td></tr>
+            <tr><td class="num">16</td><td><b>Cascata de Jermuk</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Jermuk%20Waterfall%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Queda de ~70 m + sanatórios abandonados</td><td>9</td></tr>
+            <tr><td class="num">17</td><td><b>Zorats Karer (Carahunge)</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Zorats%20Karer%20Carahunge%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Megálitos pré-históricos alinhados</td><td>9</td></tr>
+            <tr><td class="num">18</td><td><b>Mosteiro de Tatev</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tatev%20Monastery%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Suspenso sobre o desfiladeiro de Vorotan</td><td>10</td></tr>
+            <tr><td class="num">19</td><td><b>Ponte do Diabo (Satan's Bridge)</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Devils%20Bridge%20Tatev%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Ponte natural de travertino + termas</td><td>10</td></tr>
+            <tr><td class="num">20</td><td><b>Khndzoresk</b><br><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Khndzoresk%20Swinging%20Bridge%20Armenia" target="_blank" rel="noopener">mapa</a></td><td>Aldeia-caverna + ponte suspensa</td><td>10</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 9 SOBREVALORIZADOS -->
+    <section id="s9">
+      <div class="sec-head"><span class="num">09</span><div><h2>Sobrevalorizados — ignorar ou minimizar</h2>
+        <div class="sub">Não são "maus"; simplesmente não servem um solo que procura natureza, silêncio e baixo custo.</div></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>Yerevan urbano (Cascade, Praça da República)</h4><p>Fontes dançantes e praças — irrelevante para o teu perfil. Passa direto; usa a cidade só para alugar carro e abastecer.</p></div>
+        <div class="card"><h4>Echmiadzin (catedral)</h4><p>Centro religioso importante, mas é multidão e pouca natureza. Salta a menos que queiras contexto histórico.</p></div>
+        <div class="card"><h4>Sevanavank ao meio-dia</h4><p>O mosteiro-postal do Sevan fica apinhado e cheio de bancas. <b>Alternativa:</b> Hayravank e Noratus, vazios e mais autênticos.</p></div>
+        <div class="card"><h4>Lago Parz (Dilijan)</h4><p>Comercializado — tirolesa, gaivotas de plástico, pedalinhos. <b>Alternativa:</b> Lago Gosh, a pé pela floresta.</p></div>
+        <div class="card"><h4>Fila do teleférico de Tatev (fim-de-semana)</h4><p>Esperas longas no pico. <b>Alternativa:</b> desce de carro pelo desfiladeiro (Ponte do Diabo) — mais natureza, grátis.</p></div>
+        <div class="card"><h4>Provas de vinho de Areni turísticas</h4><p>Salvo interesse específico, são armadilhas. A gruta de Areni-1 (arqueologia) vale mais que as bancas.</p></div>
+        <div class="card"><h4>Galeria de água mineral de Jermuk</h4><p>O truque turístico da cidade. <b>Alternativa:</b> a cascata e os sanatórios abandonados.</p></div>
+        <div class="card"><h4>Khor Virap em hora de ponta</h4><p>Belíssimo mas pode encher de autocarros. Vai <b>ao nascer do sol</b> ou salta se estiver nublado (sem Ararat, perde metade).</p></div>
+      </div>
+    </section>
+
+    <!-- 10 ESTRADAS PANORÂMICAS -->
+    <section id="s10">
+      <div class="sec-head"><span class="num">10</span><div><h2>Estradas panorâmicas obrigatórias</h2>
+        <div class="sub">Estas são destinos por si só. Conduz devagar, para nas curvas seguras, fotografa.</div></div></div>
+      <div class="grid g2">
+        <div class="card"><div class="meta"><b>M10</b><span>2 410 m</span></div><h4>Passo de Vardenyats / Selim</h4><p>A serpentina mais famosa do país, com o caravançarai medieval numa curva. Asfaltada mas com buracos; nevoeiro possível no topo.</p></div>
+        <div class="card"><div class="meta"><b>Vorotan</b><span>serpentinas</span></div><h4>Desfiladeiro de Tatev (descida ao rio)</h4><p>Dezenas de curvas até à Ponte do Diabo e subida ao mosteiro. Estreita e lenta — parte do encanto.</p></div>
+        <div class="card"><div class="meta"><b>Aragats</b><span>→ 3 190 m</span></div><h4>Subida ao Lago Kari</h4><p>Do vale ao lago glaciar; asfalto degradado mas panorâmica alpina crescente. Encher combustível em baixo.</p></div>
+        <div class="card"><div class="meta"><b>M6</b><span>desfiladeiro</span></div><h4>Debed (Vanadzor → Alaverdi)</h4><p>A estrada corre pelo fundo do desfiladeiro, com mosteiros pendurados nas encostas e ruínas industriais.</p></div>
+        <div class="card"><div class="meta"><b>Semyonovka</b><span>hairpins</span></div><h4>Dilijan → Lago Sevan</h4><p>Curvas de floresta que desembocam na imensidão azul de Sevan — miradouro no topo do antigo túnel.</p></div>
+        <div class="card"><div class="meta"><b>M2 sul</b><span>remoto</span></div><h4>Kapan → Meghri (extensão)</h4><p>Talvez a estrada mais dramática do país, subindo e descendo passos até ao extremo sul subtropical. Exigente. Verifica fronteiras (secção 22).</p></div>
+      </div>
+    </section>
+
+    <!-- 11 FOTOGRAFIA -->
+    <section id="s11">
+      <div class="sec-head"><span class="num">11</span><div><h2>Melhores locais de fotografia</h2>
+        <div class="sub">Por tema. Combina com a secção 6 (luz) e 18 (estrelas).</div></div></div>
+      <div class="grid g3">
+        <div class="card"><span class="tag a">Geologia</span><h4>Sinfonia das Pedras</h4><p>Padrões de basalto — grande angular ao nascer do sol, longa exposição no rio.</p></div>
+        <div class="card"><span class="tag a">Arquitetura</span><h4>Noravank</h4><p>Falésias vermelhas + mosteiro; teleobjetiva para comprimir rocha e pedra ao entardecer.</p></div>
+        <div class="card"><span class="tag a">Modernismo</span><h4>Casa dos Escritores (Sevan)</h4><p>Linhas soviéticas em cantilever contra o lago — geometria e reflexos.</p></div>
+        <div class="card"><span class="tag a">Paisagem</span><h4>Tatev + desfiladeiro</h4><p>Drone/teleobjetiva do outro lado do vale para escala; luz lateral de tarde.</p></div>
+        <div class="card"><span class="tag a">Textura</span><h4>Khachkars de Noratus</h4><p>Centenas de cruzes esculpidas em luz rasante — detalhe e repetição.</p></div>
+        <div class="card"><span class="tag a">Ruína</span><h4>Kobayr na falésia</h4><p>Arcos partidos e frescos com o desfiladeiro como fundo.</p></div>
+        <div class="card"><span class="tag a">Estrada</span><h4>Serpentina de Selim</h4><p>De um miradouro acima da curva, com um carro para escala.</p></div>
+        <div class="card"><span class="tag a">Industrial</span><h4>Alaverdi (teleférico, fábricas)</h4><p>Decadência soviética, fumo, cabos — estética de urbex a céu aberto.</p></div>
+        <div class="card"><span class="tag a">Grande vista</span><h4>Khor Virap + Ararat</h4><p>O clássico arménio ao amanhecer; teleobjetiva para "colar" a montanha ao mosteiro.</p></div>
+        <div class="card"><span class="tag g">Noite</span><h4>Via Láctea sobre Sevan / Kari</h4><p>Céu escuro sobre água ou cume; f/2.8, ISO alto, 15–20 s.</p></div>
+        <div class="card"><span class="tag a">Outono</span><h4>Floresta de Dilijan</h4><p>Folhagem a virar dourada em finais de setembro; luz difusa de manhã.</p></div>
+        <div class="card"><span class="tag a">Surreal</span><h4>Khndzoresk (grutas + ponte)</h4><p>Ponte suspensa e habitações rupestres em luz de fim de tarde.</p></div>
+      </div>
+    </section>
+
+    <!-- 12 LOCAIS DE LOCAIS -->
+    <section id="s12">
+      <div class="sec-head"><span class="num">12</span><div><h2>Locais menos conhecidos, frequentados por arménios</h2>
+        <div class="sub">Onde os locais vão e os autocarros não param.</div></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>Yeghegis (vale)</h4><p>Aldeia idílica com igrejas, cemitério judaico medieval e trilhos — base perfeita e quase sem turistas.</p></div>
+        <div class="card"><h4>Península de Artanish (Sevan)</h4><p>O lado selvagem do lago: estepe, sem bancas, campismo livre e estrelas.</p></div>
+        <div class="card"><h4>Fontes termais da Ponte do Diabo</h4><p>Os arménios param aqui para um banho quente natural no desfiladeiro — leva toalha.</p></div>
+        <div class="card"><h4>Odzun & planalto de Lori</h4><p>Basílica antiga e miradouros sobre o desfiladeiro, longe do circuito UNESCO principal.</p></div>
+        <div class="card"><h4>Lago Kari para piqueniques</h4><p>Ao fim-de-semana, famílias sobem para khorovat à beira do lago glaciar — comida e boa disposição.</p></div>
+        <div class="card"><h4>Aldeias de Vayots Dzor na vindima</h4><p>Meados de setembro é época de colheita — uvas, romãs a começar, hospitalidade genuína.</p></div>
+      </div>
+    </section>
+
+    <!-- 13 URBEX -->
+    <section id="s13">
+      <div class="sec-head"><span class="num">13</span><div><h2>Locais soviéticos abandonados — urbex</h2>
+        <div class="sub">Acesso · estado · segurança. Urbex responsável: não forçar, não levar nada, não publicar coordenadas sensíveis. Muitos edifícios têm estruturas frágeis.</div></div></div>
+      <div class="grid g2">
+        <div class="card">
+          <div class="tags"><span class="tag a">3 200 m</span><span class="tag">Ciência</span></div>
+          <h3>Estação de Raios Cósmicos do Aragats</h3>
+          <p><b>Acesso:</b> junto ao Lago Kari, a pé; o complexo tem partes ainda ativas e partes abandonadas, incluindo um <b>observatório inacabado</b> ~200 m ao lado. <b>Estado:</b> misto — pavilhões degradados, instrumentos dos anos 40–80. <b>Segurança:</b> altitude e frio; respeita as áreas em uso. Boa entrada suave no urbex.</p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag t">Sevan</span><span class="tag">Arquitetura</span></div>
+          <h3>Casa de Repouso dos Escritores</h3>
+          <p><b>Acesso:</b> na península de Sevan, exterior livre; interior por vezes fechado/em uso parcial. <b>Estado:</b> o corpo modernista de 1963 mantém-se; conservação irregular. <b>Segurança:</b> baixa; sobretudo exterior. Ícone do modernismo soviético — mais "arquitetura" que "ruína".</p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag a">Jermuk</span><span class="tag">Sanatórios</span></div>
+          <h3>Sanatórios abandonados de Jermuk</h3>
+          <p><b>Acesso:</b> vários edifícios termais soviéticos vazios na cidade, entrada a pé. <b>Estado:</b> avançada decadência — mosaicos, salas de tratamento, piscinas secas. <b>Segurança:</b> pavimentos e escadas frágeis, buracos; leva lanterna, pisa com cuidado, não vás sozinho a andares altos.</p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag t">Alaverdi</span><span class="tag">Indústria</span></div>
+          <h3>Complexo mineiro de cobre de Alaverdi</h3>
+          <p><b>Acesso:</b> a cidade inteira é um museu a céu aberto de indústria soviética; <b>teleférico aéreo</b> ainda funciona para o bairro alto. <b>Estado:</b> fábricas parcialmente ativas/abandonadas — não entres em zonas operacionais. <b>Segurança:</b> poluição, cães, estruturas — fotografa de fora.</p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag">Spitak</span><span class="tag">Memória</span></div>
+          <h3>Vestígios do sismo de Spitak (1988)</h3>
+          <p><b>Acesso:</b> livre, à beira da estrada de/para Debed. <b>Estado:</b> a "igreja rosa" e memoriais; alguns edifícios nunca reconstruídos. <b>Segurança:</b> baixa. Paragem curta e sóbria, com carga histórica.</p>
+        </div>
+        <div class="card">
+          <div class="tags"><span class="tag g">Byurakan</span><span class="tag">Espaço</span></div>
+          <h3>Observatório de Byurakan / radiotelescópios</h3>
+          <p><b>Acesso:</b> o observatório principal está <b>ativo</b> (visitas por marcação); há antenas e instalações da era espacial soviética em redor, algumas abandonadas. <b>Estado:</b> misto. <b>Segurança:</b> respeita as áreas científicas em uso; não entres sem autorização. Combina bem com o dia de Aragats.</p>
+        </div>
+      </div>
+      <div class="note warn"><span class="lbl">Regras de urbex</span><b>Nunca sozinho em edifícios altos/instáveis.</b> Lanterna frontal, calçado firme, luvas. Amianto e vidro partido são comuns. Não forces portas, não danifiques, não retires objetos. Evita fotografar qualquer instalação <b>militar</b> ou perto de fronteira (secção 22).</div>
+    </section>
+
+    <!-- 14 LAGOS -->
+    <section id="s14">
+      <div class="sec-head"><span class="num">14</span><div><h2>Melhores lagos</h2></div></div>
+      <div class="grid g3">
+        <div class="card"><div class="meta"><b>1 900 m</b></div><h4>Lago Sevan</h4><p>O gigante alpino da Arménia. Vai à costa leste/Artanish para o lado selvagem e estrelas.</p></div>
+        <div class="card"><div class="meta"><b>3 190 m</b></div><h4>Lago Kari (Aragats)</h4><p>Pequeno lago glaciar, base de caminhadas, dark sky e piqueniques locais.</p></div>
+        <div class="card"><div class="meta"><b>floresta</b></div><h4>Lago Gosh (Dilijan)</h4><p>Espelho de água escondido na mata, alcançado a pé. Tranquilidade pura.</p></div>
+        <div class="card"><div class="meta"><b>~3 000 m</b></div><h4>Lagos Akna / Kari alpinos</h4><p>Para quem quer subir mais: lagos de cratera nas alturas do Aragats/Geghama (exigente, sem estrada).</p></div>
+        <div class="card"><div class="meta"><b>reservatório</b></div><h4>Azat (Garni)</h4><p>Água calma no desfiladeiro perto de Garni — paragem fotogénica rápida.</p></div>
+        <div class="card"><div class="meta"><b>evitar</b></div><h4>Lago Parz</h4><p>Bonito mas comercializado; fica pelo Gosh. Só de passagem.</p></div>
+      </div>
+    </section>
+
+    <!-- 15 CASCATAS -->
+    <section id="s15">
+      <div class="sec-head"><span class="num">15</span><div><h2>Melhores cascatas</h2>
+        <div class="sub">Em setembro o caudal é menor que na primavera — ainda assim valem a paragem.</div></div></div>
+      <div class="grid g3">
+        <div class="card"><div class="meta"><b>~70 m</b></div><h4>Cascata de Jermuk</h4><p>"Cabelo de Sereia", a mais alta acessível. Miradouro fácil + sanatórios abandonados por perto.</p></div>
+        <div class="card"><div class="meta"><b>~18 m</b></div><h4>Cascata de Shaki (Sisian)</h4><p>Larga e cénica. <b>Nota:</b> a água é por vezes desviada para a hidroelétrica — confirma localmente antes do desvio.</p></div>
+        <div class="card"><div class="meta"><b>pequena</b></div><h4>Trchkan</h4><p>Uma das mais bonitas, no norte (entre Lori e Shirak). Fica fora do anel principal — só se tiveres tempo extra.</p></div>
+        <div class="card"><div class="meta"><b>termal</b></div><h4>Ponte do Diabo (quedas + termas)</h4><p>Não é cascata alta, mas cascatas de travertino e água quente no desfiladeiro de Vorotan.</p></div>
+      </div>
+    </section>
+
+    <!-- 16 DESFILADEIROS -->
+    <section id="s16">
+      <div class="sec-head"><span class="num">16</span><div><h2>Desfiladeiros / canyons</h2></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>Desfiladeiro de Vorotan (Tatev)</h4><p>O mais profundo e dramático do sul; teleférico ou serpentina, Ponte do Diabo no fundo.</p></div>
+        <div class="card"><h4>Desfiladeiro de Debed (Lori)</h4><p>Longo cânion florestal com mosteiros e minas — a espinha do norte.</p></div>
+        <div class="card"><h4>Desfiladeiro de Garni (Azat)</h4><p>Colunas de basalto (Sinfonia das Pedras) e o templo no topo.</p></div>
+        <div class="card"><h4>Desfiladeiro de Noravank (Amaghu)</h4><p>Falésias vermelhas verticais que guardam o mosteiro — curto mas espetacular.</p></div>
+        <div class="card"><h4>Cânion de Khndzoresk</h4><p>Grutas, pináculos e ponte suspensa; o mais "de outro mundo".</p></div>
+        <div class="card"><h4>Desfiladeiro de Jermuk (Arpa)</h4><p>Verde e fundo, com a cascata a cair na parede.</p></div>
+      </div>
+    </section>
+
+    <!-- 17 CONTEMPLAR -->
+    <section id="s17">
+      <div class="sec-head"><span class="num">17</span><div><h2>Locais para ficar horas só a contemplar</h2>
+        <div class="sub">Sem checklist, sem pressa. Leva um livro, um termos de chá e o silêncio.</div></div></div>
+      <ul class="clean">
+        <li><b>Caravançarai de Selim ao entardecer</b> — pedra fria, vento no passo, séculos de silêncio da rota da seda.</li>
+        <li><b>Costa selvagem de Artanish (Sevan)</b> — a água a mudar de cor durante horas, sem ninguém.</li>
+        <li><b>Miradouro de Tatev sobre Vorotan</b> — o abismo a encher-se de sombra ao fim da tarde.</li>
+        <li><b>Lago Kari ao amanhecer</b> — reflexo do cume, ar rarefeito, o mundo ainda a dormir.</li>
+        <li><b>Campo de khachkars de Noratus</b> — vaguear entre 900 cruzes esculpidas, sozinho.</li>
+        <li><b>Kobayr na falésia</b> — sentar entre os arcos partidos com o rio lá em baixo.</li>
+        <li><b>Vale de Yeghegis</b> — prados, igrejas e o correr da ribeira; hospitalidade sem agenda.</li>
+      </ul>
+    </section>
+
+    <!-- 18 DARK SKY -->
+    <section id="s18">
+      <div class="sec-head"><span class="num">18</span><div><h2>Dark sky · observação de estrelas</h2>
+        <div class="sub">A Arménia tem céus excecionais. Verifica a fase da lua — planeia as noites de tenda perto da <b>lua nova</b> para o máximo de escuridão.</div></div></div>
+      <div class="grid g2">
+        <div class="card"><span class="tag g">★ Topo</span><h4>Lago Kari (Aragats, 3 200 m)</h4><p>Altitude + ar seco + zero luz = dos melhores céus do país. Frio extremo à noite.</p></div>
+        <div class="card"><span class="tag g">★ Topo</span><h4>Costa de Sevan / Artanish</h4><p>Via Láctea a refletir na água; horizonte limpo sobre o lago.</p></div>
+        <div class="card"><span class="tag g">Excelente</span><h4>Passo de Selim / Vayots Dzor</h4><p>Altitude e isolamento; para numa curva segura longe da estrada.</p></div>
+        <div class="card"><span class="tag g">Excelente</span><h4>Prados de Dilijan</h4><p>Clareiras florestais afastadas da cidade — mais húmido, escolhe noite limpa.</p></div>
+        <div class="card"><span class="tag g">Bom</span><h4>Byurakan (o observatório existe por algo)</h4><p>A região foi escolhida pela URSS para astronomia. Céu de qualidade a baixa altitude.</p></div>
+        <div class="card"><span class="tag g">Bom</span><h4>Vertentes acima de Goris</h4><p>Sul remoto, pouca poluição luminosa; combina com noites em Syunik.</p></div>
+      </div>
+      <div class="note"><span class="lbl">Dica de fotógrafo</span>O núcleo da Via Láctea está a pôr-se cada vez mais cedo em finais de setembro — dispara <b>logo após o crepúsculo astronómico</b>. Apps: Stellarium / Sky Guide para planear; PhotoPills para o alinhamento.</div>
+    </section>
+
+    <!-- 19 CUSTOS -->
+    <section id="s19">
+      <div class="sec-head"><span class="num">19</span><div><h2>Custos estimados</h2>
+        <div class="sub">Preços de referência de meados de 2026. Câmbio usado: <b>€1 ≈ 420 AMD</b> (verifica à chegada — oscila 415–450).</div></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>🚗 Aluguer de carro</h4><p><b>Económico manual</b> (Hyundai i10/i20, Kia Rio): <b>€28–37/dia</b> em agência local; internacionais mais caros. 11 dias ≈ <b>€330–400</b>. Escolhe <b>seguro completo</b> e confirma se permite estradas de terra (Meghri/Aragats). Considera folga de altura para o sul.</p></div>
+        <div class="card"><h4>⛽ Combustível</h4><p>Gasolina 95 ≈ <b>550–594 AMD/L (~€1,35/L)</b>. Consumo ~7 L/100 km × ~1 550 km ≈ 108 L ≈ <b>€145–190</b>. Carros a GPL são mais baratos mas menos flexíveis em zonas remotas.</p></div>
+        <div class="card"><h4>🛏 Alojamento</h4><p>Dormitório <b>5–8 000 AMD (€12–19)</b>; quarto solo em guesthouse <b>8–15 000 AMD (€19–36)</b>, muitas vezes com pequeno-almoço. Campismo selvagem <b>grátis</b>. ~7 noites pagas ≈ <b>€130–190</b>.</p></div>
+        <div class="card"><h4>🍽 Comida</h4><p>Autossuficiente parcial (mercado + tenda) + jantares de guesthouse (~€5–8) e tascas. <b>€10–15/dia</b> × 11 ≈ <b>€120–165</b>.</p></div>
+        <div class="card"><h4>🎟 Entradas</h4><p>Maioria dos mosteiros <b>grátis</b> (Haghpat, Sanahin, Noravank, Tatev, Geghard, Sevanavank). Pagas: templo de Garni ~1 800 AMD; ponte de Khndzoresk pequena taxa. Total ≈ <b>€10–20</b>.</p></div>
+        <div class="card"><h4>🎈 Atividades</h4><p>Teleférico de Tatev ~9 000 AMD (opcional — recomendo o carro); termas grátis; guia de fauna Khosrov opcional. ≈ <b>€20–50</b>.</p></div>
+      </div>
+      <div class="note"><span class="lbl">Total solo (11 dias)</span><b>≈ €1 000–1 100</b> confortável, ou <b>€850</b> apertado (mais tenda, menos teleférico). Ver anexo A para a tabela completa em EUR e AMD.</div>
+    </section>
+
+    <!-- 20 EQUIPAMENTO -->
+    <section id="s20">
+      <div class="sec-head"><span class="num">20</span><div><h2>Equipamento recomendado (setembro + campismo selvagem)</h2></div></div>
+      <div class="grid g3">
+        <div class="card"><h4>Campismo</h4><ul class="clean">
+          <li><b>Tenda 3 estações</b> resistente a vento</li>
+          <li><b>Saco-cama conforto 0 °C</b> (essencial p/ Kari/Aragats)</li>
+          <li>Colchonete isolante (R-value ≥3)</li>
+          <li>Fogão a gás + cartuchos (compra o gás localmente)</li>
+          <li>Lanterna frontal + pilhas extra</li>
+        </ul></div>
+        <div class="card"><h4>Montanha</h4><ul class="clean">
+          <li><b>Botas de caminhada</b> firmes</li>
+          <li>Bastões de trekking (também p/ cães)</li>
+          <li>Casaco impermeável + polar</li>
+          <li>Filtro/pastilhas de água</li>
+          <li>Kit primeiros socorros + manta térmica</li>
+        </ul></div>
+        <div class="card"><h4>Fotografia</h4><ul class="clean">
+          <li>Grande angular + tele; <b>tripé</b> (estrelas)</li>
+          <li>Baterias extra + carregador de isqueiro 12V</li>
+          <li>Filtro ND / polarizador</li>
+          <li>Panos de limpeza, sacos herméticos (pó)</li>
+        </ul></div>
+        <div class="card"><h4>Carro & navegação</h4><ul class="clean">
+          <li><b>Powerbank</b> grande + cabos</li>
+          <li>Suporte de telemóvel + mapas offline</li>
+          <li>Jerrican pequeno de reserva (opcional, sul)</li>
+          <li>Compressor/bomba, triângulo, colete</li>
+        </ul></div>
+        <div class="card"><h4>Urbex</h4><ul class="clean">
+          <li>Lanterna potente + frontal de reserva</li>
+          <li><b>Luvas</b> e máscara (poeira/amianto)</li>
+          <li>Calçado de sola dura</li>
+        </ul></div>
+        <div class="card"><h4>Vária</h4><ul class="clean">
+          <li>Toalha rápida (termas)</li>
+          <li>Cartão SIM/eSIM local</li>
+          <li>Dinheiro (AMD) — zonas rurais são cash</li>
+          <li>Termos para chá/café</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- 21 METEO -->
+    <section id="s21">
+      <div class="sec-head"><span class="num">21</span><div><h2>Meteorologia de setembro & roupa</h2>
+        <div class="sub">Setembro é a melhor janela: seco, ameno, luz dourada, folhagem a começar. Mas a altitude muda tudo.</div></div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Zona</th><th class="num">Máx dia</th><th class="num">Mín noite</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Yerevan / planície do Ararat</td><td class="num">26–30 °C</td><td class="num">11–14 °C</td><td>Quente e seco de dia</td></tr>
+            <tr><td>Dilijan / desfiladeiros norte</td><td class="num">21–24 °C</td><td class="num">9–11 °C</td><td>Húmido, folhagem a virar</td></tr>
+            <tr><td>Lago Sevan (1 900 m)</td><td class="num">18–22 °C</td><td class="num">7–10 °C</td><td>Vento; noite fresca</td></tr>
+            <tr><td>Aragats / Lago Kari (3 200 m)</td><td class="num">6–12 °C</td><td class="num">0–3 °C</td><td>Pode nevar; gelo de manhã</td></tr>
+            <tr><td>Syunik / Vayots Dzor</td><td class="num">22–27 °C</td><td class="num">10–13 °C</td><td>Seco, ideal para caminhar</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="prose" style="margin-top:12px;color:var(--ink-soft);font-size:14px">Chuva escassa (~5 dias no mês, sobretudo aguaceiros de tarde no norte/montanha). <strong>Sistema de camadas:</strong> t-shirts + camisa de manga; polar; casaco impermeável corta-vento; calças de caminhada + umas leves; gorro e luvas finas para Aragats/noites de tenda; chapéu e óculos de sol (sol forte de dia); calçado de caminhada + sandálias para termas.</p>
+    </section>
+
+    <!-- 22 SEGURANÇA -->
+    <section id="s22">
+      <div class="sec-head"><span class="num">22</span><div><h2>Segurança</h2>
+        <div class="sub">A Arménia é muito segura para viajantes solo. Os riscos reais são de natureza e estrada, não de crime.</div></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>🐕 Cães de pastor (o risco n.º 1)</h4><p>Grandes cães (Gampr) guardam rebanhos e podem carregar. <b>Não corras.</b> Para, evita olhar de frente com desafio, baixa-te como se apanhasses uma pedra (reconhecem o gesto), recua devagar com bastão/mochila entre ti e o cão. Dá <b>sempre</b> muito espaço aos rebanhos.</p></div>
+        <div class="card"><h4>🐺 Lobos & ursos</h4><p>Tímidos e raros de ver. Lobos evitam humanos. Ursos existem em Dilijan/Lori — ao acampar, <b>guarda a comida longe da tenda</b> e faz barulho em trilhos cerrados.</p></div>
+        <div class="card"><h4>⛰ Terreno de montanha</h4><p>Tempo muda rápido em altitude (Aragats): começa cedo, leva camadas, vira para trás se fechar. Neve/gelo residual em setembro no topo. Diz a alguém o teu plano; regista trilhos.</p></div>
+        <div class="card"><h4>🛣 Estradas rurais</h4><p>Buracos, gado na via, condução assertiva, sem barreiras em precipícios, nevoeiro nos passos. <b>Evita conduzir de noite</b> (animais, veículos sem luzes). Mantém distância, trava cedo.</p></div>
+        <div class="card"><h4>💧 Água</h4><p>As <b>fontes de montanha (aghbyur)</b> são seguras e deliciosas; água canalizada nas cidades é potável (a de Yerevan é famosa). Filtra fontes duvidosas em pastagens (gado a montante).</p></div>
+        <div class="card"><h4>🚨 Emergência</h4><p><b>112</b> (geral). Serviço de resgate publica cortes de estrada em rescue.mia.gov.am. Guarda contactos offline; powerbank sempre carregado.</p></div>
+      </div>
+      <div class="note warn"><span class="lbl">Zonas de fronteira — importante</span><b>Evita aproximar-te das fronteiras com o Azerbaijão.</b> Alguns troços em <b>Syunik</b> (Goris–Kapan–Meghri) e a leste de <b>Vardenis/Sotk</b> passam perto da linha de fronteira; há tensão residual. Não pares, não fotografes instalações militares nem sinais de fronteira, obedece a checkpoints. A extensão a Meghri é possível mas <b>confirma a situação atual</b> (aviso do MNE português + rescue.mia.gov.am) antes de descer. Perto de <b>Khor Virap</b> e do Ararat estás junto à fronteira com a Turquia — mesma regra: nada de fotografar a fronteira. Nakhichevan (exclave do Azerbaijão) fica a oeste de Meghri — não te desvies para lá.</div>
+    </section>
+
+    <!-- 23 APPS -->
+    <section id="s23">
+      <div class="sec-head"><span class="num">23</span><div><h2>Apps úteis</h2></div></div>
+      <div class="grid g3">
+        <div class="card"><h4>Navegação</h4><ul class="clean">
+          <li><b>Organic Maps / Maps.me</b> — offline, essencial</li>
+          <li><b>Yandex Navigator</b> — trânsito melhor no Cáucaso</li>
+          <li>Google Maps — backup</li>
+        </ul></div>
+        <div class="card"><h4>Trilhos & natureza</h4><ul class="clean">
+          <li><b>HikeArmenia</b> — tracks oficiais, o melhor</li>
+          <li>Wikiloc / AllTrails</li>
+          <li>PeakVisor — identificar cumes</li>
+        </ul></div>
+        <div class="card"><h4>Campismo & serviços</h4><ul class="clean">
+          <li><b>iOverlander</b> — sítios de tenda, água, combustível</li>
+          <li>park4night</li>
+        </ul></div>
+        <div class="card"><h4>Estrelas</h4><ul class="clean">
+          <li>Stellarium / Sky Guide</li>
+          <li>PhotoPills — planear Via Láctea</li>
+        </ul></div>
+        <div class="card"><h4>Prático</h4><ul class="clean">
+          <li>Google Translate (arménio offline)</li>
+          <li>XE — câmbio</li>
+          <li><b>GG / Yandex Go</b> — táxis (se precisares)</li>
+        </ul></div>
+        <div class="card"><h4>Tempo & estrada</h4><ul class="clean">
+          <li>Windy / meteoblue — meteo de montanha</li>
+          <li>rescue.mia.gov.am — cortes de estrada</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- 24 COMIDA BARATA -->
+    <section id="s24">
+      <div class="sec-head"><span class="num">24</span><div><h2>Onde comprar comida barata</h2></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>Supermercados</h4><p><b>SAS, Yerevan City, Parmani, Nor Zovk</b> nas cidades — abastece antes de sair de Yerevan e em Dilijan/Goris. Preços baixos, boa escolha.</p></div>
+        <div class="card"><h4>Lojas de aldeia (magazin)</h4><p>Em cada povoação: pão, queijo, conservas, água. Preços simpáticos; paga-se em dinheiro.</p></div>
+        <div class="card"><h4>Padarias</h4><p><b>Lavash</b> quente, <b>gata</b> (doce), matnakash — barato e delicioso. Pilar do pequeno-almoço de campismo.</p></div>
+        <div class="card"><h4>Mercados & bancas de estrada</h4><p>Meados de setembro = vindima: uvas, romãs a começar, pêssegos, tomate, ervas frescas, mel, frutos secos. Regateio leve aceite.</p></div>
+        <div class="card"><h4>Peixe de Sevan</h4><p>Bancas na costa vendem <b>sig</b> e truta para grelhar — jantar de campismo local e barato.</p></div>
+        <div class="card"><h4>Compra para levar</h4><p>Queijo (lori, chanakh), soujoukh, lavash, tomate, pepino, ervas (tarragona), frutos secos e água — a base perfeita para dias de trilho e tenda.</p></div>
+      </div>
+    </section>
+
+    <!-- 25 COMBUSTÍVEL -->
+    <section id="s25">
+      <div class="sec-head"><span class="num">25</span><div><h2>Estratégia de combustível</h2>
+        <div class="sub">Regra de ouro em zonas rurais: <b>nunca deixes o depósito abaixo de metade.</b> Postos são abundantes nas autoestradas e escassos nas montanhas.</div></div></div>
+      <ul class="clean">
+        <li><b>Antes de subir ao Aragats</b> — enche em Ashtarak/Byurakan; não há posto na subida ao Lago Kari.</li>
+        <li><b>Antes do Passo de Selim</b> — enche em Martuni/Vardenis (lado Sevan) ou Yeghegnadzor (lado sul); nada no passo.</li>
+        <li><b>Antes de Meghri (extensão)</b> — enche em Goris e novamente em Kapan; o extremo sul tem postos raros.</li>
+        <li><b>Península de Artanish / costa leste de Sevan</b> — sem postos na ponta; abastece em Gavar/Vardenis.</li>
+        <li><b>Marcas fiáveis:</b> CPS, Flash, Petrol Service, Gazprom. Peça <b>"Premium/Super 95"</b>. Frentistas abastecem; muitas vezes paga-se em dinheiro.</li>
+        <li><b>Cuidado:</b> muitos carros locais são a <b>GPL/CNG</b> — se o teu for a gasolina, confirma que o posto a tem (a maioria tem, mas nem todos os rurais).</li>
+      </ul>
+    </section>
+
+    <!-- 26 PARAGENS RÁPIDAS -->
+    <section id="s26">
+      <div class="sec-head"><span class="num">26</span><div><h2>Paragens rápidas de 5–15 min</h2>
+        <div class="sub">Esticar as pernas, uma foto, seguir. Sem desvios grandes.</div></div></div>
+      <div class="grid g3">
+        <div class="card"><p><b>Miradouro do passo de Semyonovka</b> — primeira visão de Sevan.</p></div>
+        <div class="card"><p><b>Igreja rosa de Spitak</b> — memória do sismo, à beira da M6.</p></div>
+        <div class="card"><p><b>Caravançarai de Selim</b> — 10 min de pedra medieval no passo.</p></div>
+        <div class="card"><p><b>Ponte de Areni</b> + gruta Areni-1 — arqueologia à beira da estrada.</p></div>
+        <div class="card"><p><b>Ponte do Diabo</b> — travertino e água quente no fundo de Vorotan.</p></div>
+        <div class="card"><p><b>Fontes (aghbyur)</b> — enche a garrafa com água de nascente; estão marcadas.</p></div>
+        <div class="card"><p><b>Ninhos de cegonha</b> — nas aldeias do Ararat, em postes.</p></div>
+        <div class="card"><p><b>Hayravank</b> — pequeno mosteiro sobre Sevan, quase vazio.</p></div>
+        <div class="card"><p><b>Zorats Karer</b> — megálitos a 5 min da estrada de Sisian.</p></div>
+      </div>
+    </section>
+
+    <!-- 27 RESTAURANTES -->
+    <section id="s27">
+      <div class="sec-head"><span class="num">27</span><div><h2>Restaurantes locais baratos</h2>
+        <div class="sub">O melhor valor e a comida mais autêntica é quase sempre o <b>jantar da guesthouse</b>. Além disso:</div></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>Dilijan — khorovat & kchuch</h4><p>Casas locais servem <b>khorovat</b> (grelhados) e <b>kchuch</b> (guisado em barro) por poucos euros. Pergunta na guesthouse.</p></div>
+        <div class="card"><h4>Goris — tascas de pedra</h4><p>Restaurantes familiares (ex. junto às guesthouses Mirhav/Khachik) com pratos caseiros e vinho da casa, baratíssimo.</p></div>
+        <div class="card"><h4>Costa de Sevan — peixe grelhado</h4><p>Barracas de <b>sig/truta</b> em Tsovagyugh e arredores; simples e local.</p></div>
+        <div class="card"><h4>Yeghegnadzor / aldeias</h4><p>Padaria + loja = almoço de trilho por 1–2 €. Jantar na guesthouse com produtos da horta.</p></div>
+        <div class="card"><h4>Alaverdi / Debed</h4><p>Cantinas e churrasqueiras operárias — porções generosas, preços de cidade mineira.</p></div>
+        <div class="card"><h4>Regra geral</h4><p>Procura onde os camionistas e locais param (movimento = fresco). <b>Khorovat, khashlama, dolma, spas, lavash</b> — pratos-base sempre económicos.</p></div>
+      </div>
+    </section>
+
+    <!-- 28 CAFÉS COM VISTA -->
+    <section id="s28">
+      <div class="sec-head"><span class="num">28</span><div><h2>Cafés com vista</h2></div></div>
+      <div class="grid g3">
+        <div class="card"><h4>Topo de Tatev</h4><p>Café junto ao mosteiro/estação do teleférico, com o desfiladeiro de Vorotan aos pés.</p></div>
+        <div class="card"><h4>Entrada de Noravank</h4><p>Café-restaurante na garganta, sob as falésias vermelhas — pausa perfeita antes do golden hour.</p></div>
+        <div class="card"><h4>Harsnadzor (perto de Tatev)</h4><p>Miradouro/eco-resort com vista aberta sobre o vale — bom para um café e drone.</p></div>
+        <div class="card"><h4>Península de Sevan</h4><p>Esplanadas sobre o lago; evita as mais turísticas ao meio-dia, vai a meio da tarde.</p></div>
+        <div class="card"><h4>Dilijan (rua velha)</h4><p>Cafés na Sharambeyan restaurada, rodeados de floresta.</p></div>
+        <div class="card"><h4>Jermuk</h4><p>Esplanadas sobre o desfiladeiro do Arpa, perto da cascata.</p></div>
+      </div>
+    </section>
+
+    <!-- 29 CRONOGRAMA DIÁRIO -->
+    <section id="s29">
+      <div class="sec-head"><span class="num">29</span><div><h2>Cronograma diário sugerido</h2>
+        <div class="sub">Modelo para maximizar luz e evitar multidões — ajusta a cada dia.</div></div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="num">Hora</th><th>Atividade</th></tr></thead>
+          <tbody>
+            <tr><td class="num">06:15</td><td>Acordar, chá/café no fogão ou termos</td></tr>
+            <tr><td class="num">06:45</td><td><b>Nascer do sol</b> — fotografia, luz dourada, sítios vazios</td></tr>
+            <tr><td class="num">08:00</td><td>Pequeno-almoço (guesthouse ou lavash + queijo)</td></tr>
+            <tr><td class="num">08:45</td><td>Caminhada / visita principal da manhã (fresco, sem gente)</td></tr>
+            <tr><td class="num">12:30</td><td>Almoço leve + descanso; conduzir a etapa (luz dura = má p/ foto)</td></tr>
+            <tr><td class="num">15:00</td><td>Segunda visita / trilho curto / urbex</td></tr>
+            <tr><td class="num">17:30</td><td><b>Golden hour</b> — o melhor spot fotográfico do dia</td></tr>
+            <tr><td class="num">19:00</td><td>Pôr do sol; instalar tenda ou check-in</td></tr>
+            <tr><td class="num">20:00</td><td>Jantar (guesthouse / grelha de campismo)</td></tr>
+            <tr><td class="num">21:30</td><td>Se céu limpo: <b>astrofotografia</b> / observar estrelas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 30 CHUVA -->
+    <section id="s30">
+      <div class="sec-head"><span class="num">30</span><div><h2>Plano para dias de chuva</h2>
+        <div class="sub">Chuva é rara em setembro, mas os passos altos pioram depressa. Prioridade: segurança e reorganizar, não teimar.</div></div></div>
+      <ul class="clean">
+        <li><b>Adia passos e cumes</b> — Selim, Aragats e a descida de Tatev ficam perigosos com nevoeiro/gelo. Troca por dia de vale.</li>
+        <li><b>Mosteiros ganham com névoa</b> — Noravank, Geghard, Tatev e Kobayr ficam atmosféricos e vazios à chuva; ótimo para foto de humor.</li>
+        <li><b>Termas</b> — Ponte do Diabo ou Jermuk: dia de chuva é dia perfeito para água quente.</li>
+        <li><b>Urbex coberto</b> — sanatórios de Jermuk ou interiores (com cuidado redobrado — piso escorregadio).</li>
+        <li><b>Dia de guesthouse</b> — editar fotografias, chá, conversa com anfitriões, descanso. Faz parte da viagem.</li>
+        <li><b>Conduz cénico devagar</b> — o desfiladeiro de Debed à chuva é lindo do carro; sem trilhos, só janela.</li>
+        <li><b>Regra:</b> mantém 1 dia-tampão mental — se um passo estiver cortado, inverte a ordem e faz o vale primeiro.</li>
+      </ul>
+    </section>
+
+    <!-- ANEXO A ORÇAMENTO -->
+    <section id="ax1">
+      <div class="sec-head"><span class="num">A</span><div><h2>Orçamento completo — EUR & AMD</h2>
+        <div class="sub">Cenário "confortável mas frugal", 11 dias, solo. Câmbio €1 = 420 AMD.</div></div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Categoria</th><th class="num">EUR</th><th class="num">AMD</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Aluguer de carro (11 dias)</td><td class="num">365</td><td class="num">153 300</td><td>Económico manual, seguro completo</td></tr>
+            <tr><td>Combustível (~1 550 km)</td><td class="num">175</td><td class="num">73 500</td><td>95, ~7 L/100 km</td></tr>
+            <tr><td>Alojamento (7 noites pagas)</td><td class="num">160</td><td class="num">67 200</td><td>4 noites de tenda grátis</td></tr>
+            <tr><td>Comida (11 dias)</td><td class="num">150</td><td class="num">63 000</td><td>Mercado + guesthouse + tasca</td></tr>
+            <tr><td>Entradas</td><td class="num">18</td><td class="num">7 560</td><td>Maioria dos mosteiros grátis</td></tr>
+            <tr><td>Atividades (teleférico, termas)</td><td class="num">35</td><td class="num">14 700</td><td>Opcional</td></tr>
+            <tr><td>SIM/dados + gás campismo</td><td class="num">25</td><td class="num">10 500</td><td>eSIM local</td></tr>
+            <tr><td>Contingência (~8%)</td><td class="num">80</td><td class="num">33 600</td><td>Buracos, imprevistos</td></tr>
+          </tbody>
+          <tfoot><tr><td class="tot">TOTAL (11 dias)</td><td class="num tot">≈ 1 008</td><td class="num tot">≈ 423 400</td><td>~€92/dia</td></tr></tfoot>
+        </table>
+      </div>
+      <div class="grid g3" style="margin-top:14px">
+        <div class="card"><h4>Apertado</h4><p class="stars" style="font-family:var(--serif);font-size:24px;color:var(--accent-ink)">~€850</p><p>Mais tenda, sem teleférico, carro mais velho, cozinhar quase tudo.</p></div>
+        <div class="card"><h4>Confortável</h4><p class="stars" style="font-family:var(--serif);font-size:24px;color:var(--accent-ink)">~€1 050</p><p>O cenário acima — equilíbrio ideal.</p></div>
+        <div class="card"><h4>Com extensão Meghri (12 d)</h4><p class="stars" style="font-family:var(--serif);font-size:24px;color:var(--accent-ink)">~€1 200</p><p>+1 dia de carro, +300 km, +1 noite.</p></div>
+      </div>
+      <p class="prose" style="margin-top:12px;color:var(--ink-faint);font-size:12.5px;font-family:var(--mono)">Voos internacionais para Yerevan não incluídos. Valores em AMD arredondados; câmbio real oscila 415–450/€.</p>
+    </section>
+
+    <!-- ANEXO B PREPARAÇÃO -->
+    <section id="ax2">
+      <div class="sec-head"><span class="num">B</span><div><h2>Checklist de preparação</h2></div></div>
+      <div class="card"><div class="check">
+        <div class="h">2–4 semanas antes</div>
+        <label><input type="checkbox"> Reservar carro (agência local, seguro completo, transmissão manual)</label>
+        <label><input type="checkbox"> Confirmar validade do passaporte (Portugal → Arménia: sem visto até 180 dias)</label>
+        <label><input type="checkbox"> Seguro de viagem com cobertura de montanha/condução</label>
+        <label><input type="checkbox"> Carta de condução internacional (recomendada)</label>
+        <label><input type="checkbox"> Descarregar mapas offline (Organic Maps) + tracks HikeArmenia</label>
+        <label><input type="checkbox"> Verificar avisos de fronteira (MNE + rescue.mia.gov.am)</label>
+        <div class="h">1 semana antes</div>
+        <label><input type="checkbox"> Comprar/ativar eSIM (Ucom/Team) ou plano de dados</label>
+        <label><input type="checkbox"> Testar tenda, saco-cama, fogão</label>
+        <label><input type="checkbox"> Baixar Google Translate arménio (offline)</label>
+        <label><input type="checkbox"> Levantar/trocar alguns EUR→AMD (ou levantar no MB à chegada)</label>
+        <label><input type="checkbox"> Guardar contactos de emergência + moradas offline</label>
+        <div class="h">Véspera / chegada</div>
+        <label><input type="checkbox"> Verificar previsão dos passos (Selim, Aragats)</label>
+        <label><input type="checkbox"> Inspecionar o carro na entrega (fotos de danos, pneu suplente, macaco)</label>
+        <label><input type="checkbox"> Comprar gás de campismo e primeira remessa de comida</label>
+        <label><input type="checkbox"> Encher o depósito ao sair de Yerevan</label>
+        <label><input type="checkbox"> Partilhar itinerário e localização em tempo real com alguém</label>
+      </div></div>
+    </section>
+
+    <!-- ANEXO C MALA -->
+    <section id="ax3">
+      <div class="sec-head"><span class="num">C</span><div><h2>Checklist de mala (com campismo selvagem)</h2></div></div>
+      <div class="card"><div class="check">
+        <div class="h">Dormir & abrigo</div>
+        <label><input type="checkbox"> Tenda 3 estações + espeques extra</label>
+        <label><input type="checkbox"> Saco-cama conforto 0 °C</label>
+        <label><input type="checkbox"> Colchonete isolante</label>
+        <label><input type="checkbox"> Almofada compacta / saco a fazer de almofada</label>
+        <div class="h">Cozinha</div>
+        <label><input type="checkbox"> Fogão a gás + panela + isqueiro</label>
+        <label><input type="checkbox"> Faca, tábua, talher, caneca</label>
+        <label><input type="checkbox"> Garrafas de água (2–3 L) + filtro</label>
+        <label><input type="checkbox"> Termos + sacos herméticos p/ comida</label>
+        <div class="h">Roupa (camadas)</div>
+        <label><input type="checkbox"> Casaco impermeável corta-vento</label>
+        <label><input type="checkbox"> Polar / camada térmica</label>
+        <label><input type="checkbox"> 4–5 t-shirts + 1 camisa manga comprida</label>
+        <label><input type="checkbox"> Calças de caminhada + umas leves</label>
+        <label><input type="checkbox"> Gorro + luvas finas (Aragats/noite)</label>
+        <label><input type="checkbox"> Chapéu, óculos de sol, buff</label>
+        <label><input type="checkbox"> Botas de caminhada + sandálias (termas)</label>
+        <label><input type="checkbox"> Roupa térmica p/ noites de tenda</label>
+        <div class="h">Fotografia</div>
+        <label><input type="checkbox"> Câmara + grande angular + tele</label>
+        <label><input type="checkbox"> Tripé (astrofotografia)</label>
+        <label><input type="checkbox"> Baterias extra + carregador 12V</label>
+        <label><input type="checkbox"> Cartões, filtros ND/polarizador, panos</label>
+        <div class="h">Segurança & saúde</div>
+        <label><input type="checkbox"> Kit primeiros socorros + manta térmica</label>
+        <label><input type="checkbox"> Medicação pessoal + protetor solar + repelente</label>
+        <label><input type="checkbox"> Bastões de trekking (também p/ cães)</label>
+        <label><input type="checkbox"> Lanterna frontal + reserva (urbex)</label>
+        <label><input type="checkbox"> Luvas + máscara (urbex/poeira)</label>
+        <div class="h">Eletrónica & docs</div>
+        <label><input type="checkbox"> Powerbank grande + cabos</label>
+        <label><input type="checkbox"> Suporte de telemóvel p/ carro</label>
+        <label><input type="checkbox"> Passaporte, carta, cópias, seguro (papel + digital)</label>
+        <label><input type="checkbox"> Dinheiro em AMD (zonas rurais são cash)</label>
+      </div></div>
+    </section>
+
+    <!-- ANEXO D EMERGÊNCIA -->
+    <section id="ax4">
+      <div class="sec-head"><span class="num">D</span><div><h2>Plano de emergência / alteração de itinerário</h2></div></div>
+      <div class="grid g2">
+        <div class="card"><h4>Passo cortado (neve/nevoeiro)</h4><p><b>Selim fechado:</b> desce de Sevan para Vayots Dzor pela M2 (Yeraskh) — mais longo mas seguro. <b>Aragats mau:</b> troca o dia do vulcão por Amberd + Byurakan e sobe no dia seguinte.</p></div>
+        <div class="card"><h4>Avaria / furo</h4><p>Pneu suplente + kit obrigatórios; confirma na entrega. Guarda o contacto 24h da agência. Cidades com oficina: Vanadzor, Gavar, Yeghegnadzor, Goris, Kapan.</p></div>
+        <div class="card"><h4>Doença / lesão</h4><p><b>112</b>. Hospitais principais fora de Yerevan: Vanadzor, Gavar, Goris, Kapan. Leva o número do seguro; farmácias ("dexatun") em quase todas as vilas.</p></div>
+        <div class="card"><h4>Corte de tempo (só 10 dias)</h4><p>Junta Debed num dia (só Haghpat/Sanahin) e elimina Jermuk. Mantém o esqueleto Aragats–Sevan–Selim–Tatev.</p></div>
+        <div class="card"><h4>Fronteira / segurança sul</h4><p>Se a situação em Syunik piorar, <b>salta Meghri</b> e fica por Tatev/Goris; regressa por Vayots Dzor. Confirma sempre antes de descer.</p></div>
+        <div class="card"><h4>Meteo prolongada</h4><p>Inverte a ordem: faz primeiro os vales e o sul seco (Syunik/Vayots Dzor) e deixa Aragats/Dilijan para quando abrir. O anel funciona nos dois sentidos.</p></div>
+      </div>
+      <div class="note"><span class="lbl">Contactos-chave (guardar offline)</span><b>112</b> emergência geral · <b>rescue.mia.gov.am</b> estradas · contacto 24h da agência de aluguer · nº da apólice de seguro · localização partilhada com contacto de confiança.</div>
+    </section>
+
+    <!-- ANEXO E TOP 15 -->
+    <section id="ax5">
+      <div class="sec-head"><span class="num">E</span><div><h2>Top 15 experiências imperdíveis</h2>
+        <div class="sub">Se tudo o resto falhar, faz estas.</div></div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="num">#</th><th>Experiência</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Nascer do sol sozinho na Sinfonia das Pedras de Garni</td></tr>
+            <tr><td class="num">2</td><td>Dormir a 3 200 m no Lago Kari e ver a Via Láctea sobre o Aragats</td></tr>
+            <tr><td class="num">3</td><td>Explorar a estação de raios cósmicos soviética abandonada</td></tr>
+            <tr><td class="num">4</td><td>Subir a Kobayr e sentar entre os arcos e frescos sobre o desfiladeiro</td></tr>
+            <tr><td class="num">5</td><td>Acordar ao lado do mosteiro de Haghpat sem ninguém por perto</td></tr>
+            <tr><td class="num">6</td><td>Caminhar até ao Lago Gosh pela floresta dourada de Dilijan</td></tr>
+            <tr><td class="num">7</td><td>Campismo e estrelas na costa selvagem de Artanish, Sevan</td></tr>
+            <tr><td class="num">8</td><td>Vaguear entre os 900 khachkars de Noratus ao entardecer</td></tr>
+            <tr><td class="num">9</td><td>Conduzir a serpentina de Selim e parar no caravançarai de 1332</td></tr>
+            <tr><td class="num">10</td><td>Ver as falésias de Noravank a arder ao pôr do sol</td></tr>
+            <tr><td class="num">11</td><td>Descer de carro o desfiladeiro de Vorotan até à Ponte do Diabo e às termas</td></tr>
+            <tr><td class="num">12</td><td>Contemplar Tatev suspenso sobre o abismo ao fim da tarde</td></tr>
+            <tr><td class="num">13</td><td>Atravessar a ponte suspensa de Khndzoresk até às casas-caverna</td></tr>
+            <tr><td class="num">14</td><td>Urbex nos sanatórios soviéticos de Jermuk + cascata Cabelo de Sereia</td></tr>
+            <tr><td class="num">15</td><td>Jantar caseiro numa guesthouse de aldeia na época da vindima</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div>Guia de campo · Arménia road trip solo · meados de setembro · preços de ref. meados 2026 (€1 ≈ 420 AMD)</div>
+  <div class="updated">Verifica sempre condições de estrada, fronteiras e horários próximo da data · 112 emergência · rescue.mia.gov.am</div>
+</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('topo');if(!c)return;
+  var ctx=c.getContext('2d'),W,H,DPR=Math.min(window.devicePixelRatio||1,2);
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function resize(){
+    W=c.clientWidth;H=c.clientHeight;c.width=W*DPR;c.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  function line(y,amp,freq,phase,alpha){
+    ctx.beginPath();
+    for(var x=0;x<=W;x+=6){
+      var yy=y+Math.sin(x*freq+phase)*amp+Math.sin(x*freq*0.5+phase*1.7)*amp*0.5;
+      x===0?ctx.moveTo(x,yy):ctx.lineTo(x,yy);
+    }
+    ctx.strokeStyle='rgba(169,84,30,'+alpha+')';
+    var dark=matchMedia('(prefers-color-scheme:dark)').matches||document.documentElement.getAttribute('data-theme')==='dark';
+    if(document.documentElement.getAttribute('data-theme')==='light')dark=false;
+    ctx.strokeStyle=dark?'rgba(220,138,74,'+alpha+')':'rgba(122,90,50,'+alpha+')';
+    ctx.lineWidth=1;ctx.stroke();
+  }
+  var t=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var n=Math.max(8,Math.floor(H/26));
+    for(var i=0;i<n;i++){
+      var y=(i/(n-1))*H;
+      var amp=6+ (i%3)*5 + Math.sin(i)*4;
+      line(y,amp,0.006+ (i%2)*0.002, t*0.2 + i*0.6, 0.10+ (i%4)*0.03);
+    }
+    if(!reduce){t+=0.01;requestAnimationFrame(draw);}
+  }
+  resize();draw();
+  window.addEventListener('resize',function(){resize();if(reduce)draw();});
+})();
+
+// inject a themed marker icon into each section header
+(function(){
+  var map={s1:'ic-compass',s31:'ic-route',s2:'ic-road',s3:'ic-tent',s4:'ic-road',smap:'ic-compass',
+    s5:'ic-mountain',s6:'ic-sun',s7:'ic-mountain',s8:'ic-star',s9:'ic-star',s10:'ic-road',
+    s11:'ic-camera',s12:'ic-camera',s13:'ic-ruin',s14:'ic-lake',s15:'ic-fall',s16:'ic-mountain',
+    s17:'ic-sun',s18:'ic-star',s19:'ic-coin',s20:'ic-tent',s21:'ic-sun',s22:'ic-shield',
+    s23:'ic-phone',s24:'ic-food',s25:'ic-road',s26:'ic-sun',s27:'ic-food',s28:'ic-food',
+    s29:'ic-sun',s30:'ic-lake',ax1:'ic-coin',ax2:'ic-tent',ax3:'ic-tent',ax4:'ic-shield',ax5:'ic-star'};
+  var NS='http://www.w3.org/2000/svg';
+  Object.keys(map).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec)return;
+    var head=sec.querySelector('.sec-head');if(!head)return;
+    var num=head.querySelector('.num');
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('class','sec-ic');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');
+    var use=document.createElementNS(NS,'use');use.setAttribute('href','#'+map[id]);svg.appendChild(use);
+    var wrap=document.createElement('div');wrap.className='sec-mark';
+    head.insertBefore(wrap,head.firstChild);
+    wrap.appendChild(svg);
+    if(num)wrap.appendChild(num);
+  });
+})();
+</script>
