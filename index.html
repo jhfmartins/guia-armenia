@@ -267,6 +267,33 @@
   .gmap::after{content:"↗";font-size:9px;opacity:.65}
   td .gmap{margin-top:5px}
   ul.clean li .gmap{margin-left:2px}
+
+  /* ---------- photos ---------- */
+  img{max-width:100%}
+  .cover-wrap{position:relative;max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+  .cover{display:block;width:100%;height:clamp(220px,42vw,460px);object-fit:cover;
+    border:1px solid var(--line);border-top:0;border-radius:0 0 16px 16px;background:var(--bg-2)}
+  .cover-cap{position:absolute;right:calc(clamp(16px,4vw,40px) + 12px);bottom:12px;
+    font-family:var(--mono);font-size:10px;color:#fff;background:rgba(20,18,14,.5);
+    padding:3px 9px;border-radius:20px}
+  .gallery-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:560px){.gallery-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.gallery-grid{grid-template-columns:1fr 1fr 1fr}}
+  .shot{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    background:var(--surface);box-shadow:var(--shadow)}
+  .shot img{width:100%;height:190px;object-fit:cover;display:block;background:var(--bg-2);
+    transition:transform .4s ease}
+  .shot:hover img{transform:scale(1.04)}
+  @media (prefers-reduced-motion:reduce){.shot:hover img{transform:none}}
+  .shot figcaption{padding:10px 13px;font-size:13.5px;color:var(--ink);line-height:1.35}
+  .shot .cr{display:block;font-family:var(--mono);font-size:9.5px;color:var(--ink-faint);margin-top:4px}
+  .credits{margin-top:16px;text-align:left;max-width:var(--maxw);margin-left:auto;margin-right:auto;
+    padding:14px clamp(16px,4vw,40px) 0;border-top:1px solid var(--line-soft)}
+  .credits .h{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:6px}
+  .credits ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:3px 16px}
+  .credits li{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint)}
+  .credits a{color:var(--ink-soft)}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -321,12 +348,18 @@
   </div>
 </header>
 
+<div class="cover-wrap">
+  <img class="cover" src="img/hero.jpg" alt="Mosteiro de Khor Virap com o Monte Ararat ao fundo" width="1200" height="600" loading="eager">
+  <span class="cover-cap">Khor Virap &amp; Ararat · Diego Delso · CC BY-SA 4.0</span>
+</div>
+
 <div class="shell">
   <nav class="toc" aria-label="Índice">
     <div class="brand">Arménia<small>Guia de campo</small></div>
     <div class="grp">Visão geral</div>
     <ol>
       <li><a href="#s1"><span class="n">01</span>Resumo da viagem</a></li>
+      <li><a href="#sgal"><span class="n">◎</span>Galeria de fotos</a></li>
       <li><a href="#s31"><span class="n">31</span>Mapa lógico — porquê esta rota</a></li>
       <li><a href="#s2"><span class="n">02</span>Itinerário dia a dia</a></li>
       <li><a href="#s3"><span class="n">03</span>Onde dormir cada noite</a></li>
@@ -396,6 +429,40 @@
         <div class="card"><div class="meta"><b>REGRA DE OURO</b></div><h4>Como decidir</h4><p>Entre duas opções, escolhe sempre a mais remota, mais alta e mais barata — desde que a estrada seja segura e o depósito de combustível esteja acima de metade.</p></div>
       </div>
       <div class="note"><span class="lbl">Variantes</span><b>10 dias:</b> corta o dia de Jermuk e junta Debed num só dia. &nbsp;·&nbsp; <b>12 dias:</b> acrescenta a descida a Kapan/Meghri (o sul profundo) — ver Dia 11B no itinerário e as notas de fronteira na secção 22.</div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="sgal">
+      <div class="sec-head"><span class="num">◎</span><div><h2>Galeria</h2>
+        <div class="sub">Fotografias de licença livre (Wikimedia Commons) dos principais locais da rota. Créditos completos no rodapé.</div></div></div>
+      <div class="gallery-grid">
+        <figure class="shot"><img src="img/garni.jpg" alt="Sinfonia das Pedras · desfiladeiro de Garni" loading="lazy" width="1200" height="800">
+          <figcaption>Sinfonia das Pedras · desfiladeiro de Garni<span class="cr">Foto: Diego Delso · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/geghard.jpg" alt="Mosteiro rupestre de Geghard" loading="lazy" width="1200" height="800">
+          <figcaption>Mosteiro rupestre de Geghard<span class="cr">Foto: Diego Delso · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/aragats.jpg" alt="Monte Aragats e Lago Kari" loading="lazy" width="1200" height="800">
+          <figcaption>Monte Aragats e Lago Kari<span class="cr">Foto: Wowan1978 · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/haghpat.jpg" alt="Mosteiro de Haghpat · Debed" loading="lazy" width="1200" height="800">
+          <figcaption>Mosteiro de Haghpat · Debed<span class="cr">Foto: Diego Delso · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/dilijan.jpg" alt="Mosteiro de Haghartsin · Dilijan" loading="lazy" width="1200" height="800">
+          <figcaption>Mosteiro de Haghartsin · Dilijan<span class="cr">Foto: Aleksey Chalabyan (Xelgen) · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/sevan.jpg" alt="Sevanavank · Lago Sevan" loading="lazy" width="1200" height="800">
+          <figcaption>Sevanavank · Lago Sevan<span class="cr">Foto: Alexxx1979 · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/sevanwriters.jpg" alt="Casa de Repouso dos Escritores · Sevan" loading="lazy" width="1200" height="800">
+          <figcaption>Casa de Repouso dos Escritores · Sevan<span class="cr">Foto: Ապատ63 · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/selim.jpg" alt="Caravançarai de Selim" loading="lazy" width="1200" height="800">
+          <figcaption>Caravançarai de Selim<span class="cr">Foto: Mosbatho · CC BY 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/noravank.jpg" alt="Mosteiro de Noravank" loading="lazy" width="1200" height="800">
+          <figcaption>Mosteiro de Noravank<span class="cr">Foto: Diego Delso · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/tatev.jpg" alt="Mosteiro de Tatev · desfiladeiro de Vorotan" loading="lazy" width="1200" height="800">
+          <figcaption>Mosteiro de Tatev · desfiladeiro de Vorotan<span class="cr">Foto: Diego Delso · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/khndzoresk.jpg" alt="Ponte suspensa de Khndzoresk" loading="lazy" width="1200" height="800">
+          <figcaption>Ponte suspensa de Khndzoresk<span class="cr">Foto: Vyacheslav Argenberg · CC BY 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/jermuk.jpg" alt="Cascata de Jermuk" loading="lazy" width="1200" height="800">
+          <figcaption>Cascata de Jermuk<span class="cr">Foto: Marcin Konsek · CC BY-SA 4.0</span></figcaption></figure>
+        <figure class="shot"><img src="img/noratus.jpg" alt="Khachkars de Noratus" loading="lazy" width="1200" height="800">
+          <figcaption>Khachkars de Noratus<span class="cr">Foto: Marcin Konsek · CC BY-SA 4.0</span></figcaption></figure>
+      </div>
     </section>
 
     <!-- 31 MAPA LÓGICO (colocado cedo por ser a lógica da rota) -->
@@ -1314,7 +1381,26 @@
 </div>
 
 <footer>
-  <div>Guia de campo · Arménia road trip solo · meados de setembro · preços de ref. meados 2026 (€1 ≈ 420 AMD)</div>
+  <div class="credits">
+    <div class="h">Fotografias · Wikimedia Commons (reutilização com atribuição)</div>
+    <ul>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Monasterio_Khor_Virap,_Armenia,_2016-10-01,_DD_25.jpg" target="_blank" rel="noopener">Diego Delso</a> — CC BY-SA 4.0 · Khor Virap</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Sinfon%C3%ADa_de_las_Piedras,_valle_de_Garni,_Armenia,_2016-10-02,_DD_33.jpg" target="_blank" rel="noopener">Diego Delso</a> — CC BY-SA 4.0 · Garni</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Monasterio_de_Geghard,_Armenia,_2016-10-02,_DD_65-74_PAN.jpg" target="_blank" rel="noopener">Diego Delso</a> — CC BY-SA 4.0 · Geghard</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:View_from_Mount_Aragats_to_Lake_Kari.jpg" target="_blank" rel="noopener">Wowan1978</a> — CC BY-SA 4.0 · Aragats</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Monasterio_de_Haghpat,_Armenia,_2016-09-30,_DD_04.jpg" target="_blank" rel="noopener">Diego Delso</a> — CC BY-SA 4.0 · Haghpat</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Haghartsin_monastery_in_Fall_2019.jpg" target="_blank" rel="noopener">A. Chalabyan (Xelgen)</a> — CC BY-SA 4.0 · Dilijan</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Armenia._Lake_Sevan._Sevanavank_P8230612_2350.jpg" target="_blank" rel="noopener">Alexxx1979</a> — CC BY-SA 4.0 · Sevan</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Orbelian%27s_Caravanserai,_Armenia.jpg" target="_blank" rel="noopener">Mosbatho</a> — CC BY 4.0 · Selim</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Carretera_al_monasterio_Noravank,_Armenia,_2016-10-01,_DD_55-59_PAN.jpg" target="_blank" rel="noopener">Diego Delso</a> — CC BY-SA 4.0 · Noravank</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Monasterio_de_Tatev,_Armenia,_2016-10-01,_DD_89-91_HDR.jpg" target="_blank" rel="noopener">Diego Delso</a> — CC BY-SA 4.0 · Tatev</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Khndzoresk_Bridge,_Khndzoresk,_Armenia.jpg" target="_blank" rel="noopener">V. Argenberg</a> — CC BY 4.0 · Khndzoresk</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:2014_Prowincja_Wajoc_Dzor,_D%C5%BCermuk,_Wodospad_(03).jpg" target="_blank" rel="noopener">Marcin Konsek</a> — CC BY-SA 4.0 · Jermuk</li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:2014_Prowincja_Gegharkunik,_Cmentarz_Noratus_(19).jpg" target="_blank" rel="noopener">Marcin Konsek</a> — CC BY-SA 4.0 · Noratus</li>
+      <li>Casa dos Escritores — Ապատ63 — CC BY-SA 4.0 · Sevan</li>
+    </ul>
+  </div>
+  <div style="margin-top:14px">Guia de campo · Arménia road trip solo · meados de setembro · preços de ref. meados 2026 (€1 ≈ 420 AMD)</div>
   <div class="updated">Verifica sempre condições de estrada, fronteiras e horários próximo da data · 112 emergência · rescue.mia.gov.am</div>
 </footer>
 
@@ -1355,7 +1441,7 @@
 
 // inject a themed marker icon into each section header
 (function(){
-  var map={s1:'ic-compass',s31:'ic-route',s2:'ic-road',s3:'ic-tent',s4:'ic-road',smap:'ic-compass',
+  var map={s1:'ic-compass',s31:'ic-route',s2:'ic-road',s3:'ic-tent',s4:'ic-road',smap:'ic-compass',sgal:'ic-camera',
     s5:'ic-mountain',s6:'ic-sun',s7:'ic-mountain',s8:'ic-star',s9:'ic-star',s10:'ic-road',
     s11:'ic-camera',s12:'ic-camera',s13:'ic-ruin',s14:'ic-lake',s15:'ic-fall',s16:'ic-mountain',
     s17:'ic-sun',s18:'ic-star',s19:'ic-coin',s20:'ic-tent',s21:'ic-sun',s22:'ic-shield',
